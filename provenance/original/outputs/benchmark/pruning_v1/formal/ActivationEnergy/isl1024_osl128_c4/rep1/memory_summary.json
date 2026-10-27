@@ -1,0 +1,11 @@
+{
+  "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+  "sample_interval_seconds": 1,
+  "sampled_max_power_w": 323.38,
+  "sampled_max_temperature_c": 66.0,
+  "sampled_max_used_mib": 12625.0,
+  "sampled_min_temperature_c": 29.0,
+  "sampled_min_used_mib": 12207.0,
+  "samples": 99,
+  "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup"
+}

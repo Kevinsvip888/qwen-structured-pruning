@@ -1,0 +1,21 @@
+.venv*/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.cache/
+data/
+models/
+outputs/
+logs/
+backups/
+*.zip
+*.tar.gz
+.env
+.env.*
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+
+# Deliberately retained archived evidence, distinct from runtime directories.
+!provenance/original/**

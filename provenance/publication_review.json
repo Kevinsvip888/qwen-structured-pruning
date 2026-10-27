@@ -1,0 +1,21 @@
+{
+  "archive_sha256": "31b2437e65a89c0388909b16224c931702b98c12ecfb741e6c93b9c17288164b",
+  "original_files": 294,
+  "original_python_files": 13,
+  "original_code_modified": false,
+  "gpu_execution_during_publication_review": false,
+  "full_benchmark_records_included": true,
+  "quality_raw_responses_included": false,
+  "model_weights_included": false,
+  "activation_statistics_tensors_included": false,
+  "publication_checks": [
+    "294 source hashes",
+    "Python/shell syntax and documented shell blocks",
+    "relative Markdown links",
+    "18 native benchmark receipts and CSV arithmetic",
+    "quality score vectors and paired exact p-values",
+    "Git stage/checkout byte preservation",
+    "corruption rejection"
+  ],
+  "limits": "CPU verification of supplied records; no tensor/model execution or raw quality/likelihood re-audit."
+}

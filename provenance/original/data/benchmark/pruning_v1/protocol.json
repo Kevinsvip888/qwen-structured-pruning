@@ -1,0 +1,262 @@
+{
+  "backend": "openai",
+  "comparison_scope": "One pruning width, one random channel seed, one GPU, two fixed workloads; no general speed guarantee.",
+  "concurrencies": [
+    4,
+    1
+  ],
+  "endpoint": "/v1/completions",
+  "file_sha256": {
+    "/root/autodl-tmp/qwen-inference-lab/data/calibration/seed_42/manifest.json": "4e91a508ce0c5bde50c6da3518317035975f2529e6daf6dceaf508b17b2d6981",
+    "/root/autodl-tmp/qwen-inference-lab/data/calibration/seed_42/pool.jsonl": "2e7617c9373418c024716f768436cb79ad75dbfc48bdf10b25abad340a889241",
+    "/root/autodl-tmp/qwen-inference-lab/data/calibration/seed_42/pool_audit.json": "e66ceb9786e2c3a13f927af62f05e78f2403641d74498580a50e7deb59e74229",
+    "/root/autodl-tmp/qwen-inference-lab/data/calibration/seed_42/random128.jsonl": "fb11a5b68edd4f732ec6d890b88502ea2c907d061d9ec8a41120d2feccf23417",
+    "/root/autodl-tmp/qwen-inference-lab/data/calibration/seed_42/random_subsets_manifest.json": "93920a23d1578d87384489f42329baf1797b33e060d30d3d63ed11fd64c47d90",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/arc_validation.jsonl": "16b59737cb520f748020546b5e3fa76f0893d1a1237bb350dd81dd43a09f151b",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/day7_arc_challenge_dev_prompt_preview.txt": "1652bedbca5d600d3f057ac4803bd1861ad5fe1153bcd69b1d0f95113a0bcee9",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/day7_arc_challenge_dev_requests.jsonl": "7d0762104df0f53735f84c97722013a36abc272fb44bf1cdee7644ddf2825ddf",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/day7_gsm8k_dev_prompt_preview.txt": "c5345397483f5e32451ee8d1fe40fef8a25724eb19d0498ab225e09d90ca053a",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/day7_gsm8k_dev_requests.jsonl": "31eb313a0bc27f005530b64288653fc8c9823977d880b44638dd69e03ee69521",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/development_protocol.json": "44dc329b87c700a065e15c7395f040d8beb4ea13d6063ab28efa9f806ca7449f",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/gsm8k_development.jsonl": "837db7955b377a9d1a3e61ba6e9641527006c2d9d8925adc079997fc8ced8948",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/gsm8k_fewshot5.jsonl": "626d955fb199888d66f370e3093c1b4e16b11033363b896a420ab4d887169b38",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/harness_source_hashes.json": "1794f559036275228ef9a9ba7169a7103612659005662c9b0f59f78ce681d207",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/tasks/development/day7_arc_challenge_dev.yaml": "9958a7357090d0494741075408bad130d0a75ecc0762bc71eeeb940ed3fb9a01",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_quality_v1/tasks/development/day7_gsm8k_dev.yaml": "98e7b32180bd3ca5f317b3a034e85a441755d43405353778f8026c2aa1917bf9",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/raw/arc_challenge/ARC-Challenge/validation-00000-of-00001.parquet": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/raw/gsm8k/main/train-00000-of-00001.parquet": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/source_revisions.json": "96806cc308a6673064807822564b77ba18c52a611c3b4c1fd6fa28d59b64bbd8",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/task_defaults/arc/arc_challenge.yaml": "682621c26ae24b1065a2d732460a55a8ef2b9f2544574431666c9309a9efd7bd",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/task_defaults/arc/arc_easy.yaml": "96da1d9efe1df88659481cedc13985cb347dc068554a2eae561303fa39bfab3f",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/task_defaults/gsm8k/gsm8k.yaml": "82eb1780b263bc040729032b3e076990c7933f42163c91e359f38820dd1d8833",
+    "/root/autodl-tmp/qwen-inference-lab/data/evaluation/day7_sources/task_defaults_manifest.json": "d698f6760a0312e76062396aa93b413acec5809bf9fbd3333be8cf3798bf0a13",
+    "/root/autodl-tmp/qwen-inference-lab/data/source_revisions.json": "152d73fc28e5d181d410b658c12ff07a5ec7203eaee20b92fe253a1f51aeffe7",
+    "/root/autodl-tmp/qwen-inference-lab/data/splits/gsm8k_train_split.json": "eb0ec14ac969161e2e311e2287aed8b60d25ba0f26c49aff18c2eed286e96503",
+    "/root/autodl-tmp/qwen-inference-lab/logs/evaluation/day7/eval-requirements.txt": "8e7c0b3bcf690c4a3d317f0b562540a78a11ba47df2512d732d2b5d4b7c533ac",
+    "/root/autodl-tmp/qwen-inference-lab/logs/model_revision.json": "3f563d9f4445e05bf0921e4ba1b0536646b0539bb2b2e13134551b2128867c61",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/config.json": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/generation_config.json": "835fffe355c9438e7a25be099b3fccaa98350b83451f9fd2d99512e74f1ade48",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/model-00001-of-00003.safetensors": "75311d91bb08cf0b882913da464a1e722a31fb44db35208663487efb7a3d8ed6",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/model-00002-of-00003.safetensors": "0b48adbb1f60e901153d91907ba11ce63bd4b8b584482e730f48808d055dfba1",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/model-00003-of-00003.safetensors": "7dd39ccca5e4de123c74c14af44c9bf2eb75df33b4614382af0134528e060d5d",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/model.safetensors.index.json": "d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507/tokenizer_config.json": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3",
+    "/root/autodl-tmp/qwen-inference-lab/scripts/prepare_day7_quality.py": "cc5dec34982ae23a36d34e8364fbb75987b95023f79e98f4b9aae2cbba92611a",
+    "/root/autodl-tmp/qwen-inference-lab/scripts/prepare_day7_sources.py": "aaadc8118b5123b6070b208bb80667c4e43f5b8ebbb353c9bcfb0518c4529e64",
+    "/root/autodl-tmp/qwen-pruning-lab/data/calibration/random128_seed42.jsonl": "fb11a5b68edd4f732ec6d890b88502ea2c907d061d9ec8a41120d2feccf23417",
+    "/root/autodl-tmp/qwen-pruning-lab/data/evaluation/pruning_dev_v1/protocol.json": "9ec3eb2d74fd9461d3de850a12fca8ac12b6e4eb15ecd48e72ea35b20d41b352",
+    "/root/autodl-tmp/qwen-pruning-lab/data/evaluation/pruning_dev_v1/tasks/day7_arc_challenge_dev.yaml": "9958a7357090d0494741075408bad130d0a75ecc0762bc71eeeb940ed3fb9a01",
+    "/root/autodl-tmp/qwen-pruning-lab/data/evaluation/pruning_dev_v1/tasks/day7_gsm8k_dev.yaml": "98e7b32180bd3ca5f317b3a034e85a441755d43405353778f8026c2aa1917bf9",
+    "/root/autodl-tmp/qwen-pruning-lab/data/protocol_v1.json": "f4482e32ad3e8b9564659856610fd9129607d194dc832d5faf48460b92d55592",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/config.json": "fb63622714453810311fe00c9be0515016c5ff44885cfb225bff8450733141a7",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/generation_config.json": "835fffe355c9438e7a25be099b3fccaa98350b83451f9fd2d99512e74f1ade48",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/model-00001-of-00004.safetensors": "275cb555b3e3431d150adb2845185a1cc7e56e99586862647d405d5a89afdca7",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/model-00002-of-00004.safetensors": "3ea6e3afe986c4aab12d767ca86ac1781c778756038855c4ada746c5f7949679",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/model-00003-of-00004.safetensors": "fe2adede332b2fb53612176e02878eee20221661b3ef0cb88380950bae1278cf",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/model-00004-of-00004.safetensors": "c7614befab02ad629adeac978c0cbc36051786c8ada444ac6b9aeb434613c6c9",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/model.safetensors.index.json": "c0bd217c57c732fc31ac067639cac8c1a635593e0e3a2777ae593752db9fb067",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/pruning_manifest.json": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/tokenizer_config.json": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/config.json": "fb63622714453810311fe00c9be0515016c5ff44885cfb225bff8450733141a7",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/generation_config.json": "835fffe355c9438e7a25be099b3fccaa98350b83451f9fd2d99512e74f1ade48",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/model-00001-of-00004.safetensors": "8d3c132b27a7c44ab8a7a1dc4ae2a15cdbb4cfb67c0930459888c904380d039c",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/model-00002-of-00004.safetensors": "03cb4dcc4abc56b2825d13cc26a6e66daca789295f78bbc69c1f35d66b0cac28",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/model-00003-of-00004.safetensors": "f0590c2e2e317d7330b8e6cff2f40ad8423d7d9355ff1338fa587eb8b58e33d7",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/model-00004-of-00004.safetensors": "5e5a2a76957e1e44a89bbbdde5343bd8dff2a8b05fe9deca5014deaf13936738",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/model.safetensors.index.json": "c0bd217c57c732fc31ac067639cac8c1a635593e0e3a2777ae593752db9fb067",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/pruning_manifest.json": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/tokenizer_config.json": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3",
+    "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/root/autodl-tmp/qwen-pruning-lab/scripts/prepare_pruning_benchmarks.py": "3ec75f8e84f8aa52ad3037fbe1858216dc40688861585fa7217cb166182adfd4",
+    "/root/autodl-tmp/qwen-pruning-lab/scripts/prepare_pruning_quality.py": "ab6d6c2fa64bf1e80e9e83f6767b7c40f1344569ea2a651cf24aa2599de3e1b1",
+    "/root/autodl-tmp/qwen-pruning-lab/scripts/pruning_eval_recording.py": "3e51498f3229b014a66a9a02a76ebcd165c69c4bcecea6e4f34eb9d51c4e751a",
+    "/root/autodl-tmp/qwen-pruning-lab/scripts/run_pruning_benchmark.py": "b6d4a1794a0b59bf8521b547e3fd1d4dbaa7232996c0e39f28be2d3d224edcb7",
+    "/root/autodl-tmp/qwen-pruning-lab/scripts/run_pruning_quality.py": "1e66852480fadc6f134ba3a2620e853cd1b1e64de6a19330d5605761672e226c"
+  },
+  "generation_seed": 42,
+  "gpu_identity": {
+    "driver": "580.76.05",
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+  },
+  "ignore_eos": true,
+  "input_tokens": 1024,
+  "memory_sample_interval_seconds": 1,
+  "memory_scope": "Whole GPU while benchmark client runs, including warmup and initial probe; excludes startup and can miss brief peaks.",
+  "methods": [
+    "BF16",
+    "RandomChannels",
+    "ActivationEnergy"
+  ],
+  "models": {
+    "ActivationEnergy": {
+      "alias": "qwen-prune-energy",
+      "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+      "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+    },
+    "BF16": {
+      "alias": "qwen-prune-bf16",
+      "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+    },
+    "RandomChannels": {
+      "alias": "qwen-prune-random",
+      "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+      "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+    }
+  },
+  "output_tokens": 128,
+  "pilot_requests": 8,
+  "pilot_warmup_requests": 4,
+  "preparation_inference_requests": 0,
+  "primary_comparison": "ActivationEnergy versus original BF16; mean run-level output token throughput",
+  "primary_workload": {
+    "concurrency": 4,
+    "input_tokens": 1024,
+    "output_tokens": 128
+  },
+  "prior_results": "Fresh measurements for all three models. Project 1 timings are not used as the baseline.",
+  "quality_protocol_sha256": "9ec3eb2d74fd9461d3de850a12fca8ac12b6e4eb15ecd48e72ea35b20d41b352",
+  "repetition_scope": "Repeated benchmark runs, not three independent machine or model-seed samples. A server may stay up between consecutive runs of the same model.",
+  "repetitions": 3,
+  "request_rate": "inf",
+  "requests": 200,
+  "schedule": [
+    {
+      "concurrency": 4,
+      "method": "BF16",
+      "repetition": 1
+    },
+    {
+      "concurrency": 1,
+      "method": "BF16",
+      "repetition": 1
+    },
+    {
+      "concurrency": 4,
+      "method": "RandomChannels",
+      "repetition": 1
+    },
+    {
+      "concurrency": 1,
+      "method": "RandomChannels",
+      "repetition": 1
+    },
+    {
+      "concurrency": 4,
+      "method": "ActivationEnergy",
+      "repetition": 1
+    },
+    {
+      "concurrency": 1,
+      "method": "ActivationEnergy",
+      "repetition": 1
+    },
+    {
+      "concurrency": 1,
+      "method": "RandomChannels",
+      "repetition": 2
+    },
+    {
+      "concurrency": 4,
+      "method": "RandomChannels",
+      "repetition": 2
+    },
+    {
+      "concurrency": 1,
+      "method": "ActivationEnergy",
+      "repetition": 2
+    },
+    {
+      "concurrency": 4,
+      "method": "ActivationEnergy",
+      "repetition": 2
+    },
+    {
+      "concurrency": 1,
+      "method": "BF16",
+      "repetition": 2
+    },
+    {
+      "concurrency": 4,
+      "method": "BF16",
+      "repetition": 2
+    },
+    {
+      "concurrency": 4,
+      "method": "ActivationEnergy",
+      "repetition": 3
+    },
+    {
+      "concurrency": 1,
+      "method": "ActivationEnergy",
+      "repetition": 3
+    },
+    {
+      "concurrency": 4,
+      "method": "BF16",
+      "repetition": 3
+    },
+    {
+      "concurrency": 1,
+      "method": "BF16",
+      "repetition": 3
+    },
+    {
+      "concurrency": 4,
+      "method": "RandomChannels",
+      "repetition": 3
+    },
+    {
+      "concurrency": 1,
+      "method": "RandomChannels",
+      "repetition": 3
+    }
+  ],
+  "schedule_policy": "Formal run receipts must follow this order; pilots excluded.",
+  "secondary": [
+    "RandomChannels versus BF16",
+    "all three models at concurrency 1",
+    "TTFT, TPOT, end-to-end latency, sampled whole-GPU memory"
+  ],
+  "serve_environment": {
+    "freeze_sha256": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+    "installed": {
+      "packages": {
+        "safetensors": "0.8.0",
+        "torch": "2.13.0+cu132",
+        "transformers": "5.19.0",
+        "triton": "3.7.1",
+        "vllm": "0.32.0"
+      },
+      "python": "3.12.15"
+    }
+  },
+  "server": {
+    "attention_backend": "FLASH_ATTN",
+    "dtype": "bfloat16",
+    "enable_prefix_caching": false,
+    "generation_config": "vllm",
+    "kv_cache_dtype": "bfloat16",
+    "kv_cache_memory_bytes": 4294967296,
+    "max_model_len": 8192,
+    "max_num_batched_tokens": 4096,
+    "max_num_seqs": 4,
+    "seed": 42
+  },
+  "statistical_plan": "For each method/workload report all three run values, arithmetic mean and sample SD. Report ratios of mean throughput and differences of mean sampled maxima. Three repeats are descriptive; do not claim statistical significance.",
+  "streaming": true,
+  "study": "pruning_serving_v1",
+  "temperature": 0,
+  "timing_scope": "Warm local HTTP streaming service; model startup and compilation excluded; client-side timing includes HTTP/client overhead.",
+  "token_length_scope": "Lengths recorded by the native vLLM benchmark client; no per-request forwarding proxy is inserted.",
+  "tokenizer": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507",
+  "top_p": 1,
+  "warmup_requests": 20,
+  "workload_seed": 42
+}

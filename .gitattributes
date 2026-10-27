@@ -1,0 +1,5 @@
+* -text
+# Preserve frozen experiment bytes and raw log formatting.
+scripts/** -whitespace
+pruning_lab/** -whitespace
+provenance/original/** -whitespace

@@ -1,0 +1,35 @@
+{
+  "checkpoint": {
+    "alias": "qwen-prune-random",
+    "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+    "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+  },
+  "client_recorded_request_lengths_verified": true,
+  "completed_audit": true,
+  "concurrency": 1,
+  "file_sha256": {
+    "benchmark.json": "7c7c494b813eb2ce90e26483652d6622f93353dc165c3e2e4c028bedfe44da6d",
+    "client.log": "229adcc2d5f340a032949b7e3fb079b685fb63a1f9f95d2e3f344f6eff0e2145",
+    "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+    "gpu_after.txt": "6fcf08aefe04d33503444666c069baee5a6910fe6f0b7b42b4bb6eb29a5130e9",
+    "gpu_before.txt": "20c4d07a62835ac4ea092c54c211f1cce10bb663202897dffab6e8f06f5b1fbc",
+    "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gpu_samples.csv": "a0214cb3324e38ad2687e1b0ea20cb157238f444101f07a566f486d75c8bbd74",
+    "memory_summary.json": "5e36d2a71117596b2ae5f994f41891f9675322d56f05c1db45e0750224007516",
+    "models.json": "a97faa83dd63b77b1eaf454b261891e9ee4054457da9129cfb185763175d3b75",
+    "run_manifest.json": "23193397c9d938ab022f54f54a2f3a2951983c404c497e4533e763185b80c20d",
+    "server_after.log": "ee0aab24763d62e3351c4a624b85245649ed745e6f18c5b4b995379606668e0f",
+    "server_before.log": "8ff1bfe0824e38fe33700e232460d39471178d09a5138a5bc7892ea0fa3f87ee"
+  },
+  "gpu_identity": {
+    "driver": "580.76.05",
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+  },
+  "method": "RandomChannels",
+  "note": "Native-client warm service measurement. Token lengths are client-recorded; sampled memory includes warmup and can miss peaks.",
+  "pilot": false,
+  "protocol_sha256": "947676903d7210320e4b7e809d75c3474ddc8a212c6f1b04cb7f39ab36ff91c8",
+  "repetition": 3,
+  "study": "pruning_serving_v1"
+}

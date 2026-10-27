@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+  "elapsed_export_and_validation_seconds": 40.74676866829395,
+  "identity": {
+    "dtype": "bfloat16",
+    "exporter_script_sha256": "3da820339042eefd1bd89185c4d2e873c4e41f025e64d74372d2ff2a63bb547f",
+    "fine_tuning": false,
+    "importance_manifest_sha256": "d8f26f8b3403d2358abd68dadb2dfe0f8a628e3837fbd1ac47abfa963db60590",
+    "method": "RandomChannels",
+    "protocol_sha256": "f4482e32ad3e8b9564659856610fd9129607d194dc832d5faf48460b92d55592",
+    "quantization": false,
+    "retained_indices_sha256": "1a80a65f73fba43a50b9d5b330a00a43206603a09c049da3d4bfe659dd67a73d",
+    "surgery_helper_sha256": "4be119804553e9ef4b5e6ce12888424914e88adbcc0b02d11083e135e610623d",
+    "surgery_validation_sha256": "edb3505862a01eb2f3fb045c01369ffd763f3c15bca152cf233ebc9e6d234036",
+    "target_intermediate_size": 9216
+  },
+  "manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4",
+  "method": "RandomChannels",
+  "quality_or_speed_measured": false
+}

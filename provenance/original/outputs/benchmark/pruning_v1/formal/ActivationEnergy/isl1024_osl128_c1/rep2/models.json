@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "created": 1793131569,
+      "id": "qwen-prune-energy",
+      "max_model_len": 8192,
+      "object": "model",
+      "owned_by": "vllm",
+      "parent": null,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1793131569,
+          "group": null,
+          "id": "modelperm-a9afdd77ce65ed1c",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ],
+      "root": "./models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy"
+    }
+  ],
+  "object": "list"
+}

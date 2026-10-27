@@ -1,0 +1,642 @@
+[
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04309070110321045,
+    "id": "general-245"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.042831555008888245,
+    "id": "math-154"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.044825777411460876,
+    "id": "general-042"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04083218425512314,
+    "id": "math-125"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040879182517528534,
+    "id": "general-128"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04072687774896622,
+    "id": "math-183"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040806353092193604,
+    "id": "general-159"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.0408441498875618,
+    "id": "math-022"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04082284867763519,
+    "id": "general-232"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04088354855775833,
+    "id": "math-133"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085832089185715,
+    "id": "general-132"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040833041071891785,
+    "id": "math-151"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04083181172609329,
+    "id": "general-006"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04084029793739319,
+    "id": "math-203"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040818847715854645,
+    "id": "general-103"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040856800973415375,
+    "id": "math-244"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0408240482211113,
+    "id": "general-122"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04084577411413193,
+    "id": "math-225"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04083956778049469,
+    "id": "general-038"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04086442291736603,
+    "id": "math-198"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0408501923084259,
+    "id": "general-063"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04086121916770935,
+    "id": "math-187"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040888793766498566,
+    "id": "general-186"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040843211114406586,
+    "id": "math-123"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04087337106466293,
+    "id": "general-121"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04086122661828995,
+    "id": "math-232"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040874361991882324,
+    "id": "general-162"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04083937406539917,
+    "id": "math-231"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04083744436502457,
+    "id": "general-024"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04087412357330322,
+    "id": "math-054"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04081141948699951,
+    "id": "general-176"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04082135856151581,
+    "id": "math-099"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04113052785396576,
+    "id": "general-109"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040759555995464325,
+    "id": "math-061"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04080472141504288,
+    "id": "general-080"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040913693606853485,
+    "id": "math-062"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085736721754074,
+    "id": "general-113"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04090791940689087,
+    "id": "math-193"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04086738079786301,
+    "id": "general-111"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040921419858932495,
+    "id": "math-087"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04092903435230255,
+    "id": "general-161"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04085270315408707,
+    "id": "math-251"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085791856050491,
+    "id": "general-126"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040852829813957214,
+    "id": "math-096"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04088635742664337,
+    "id": "general-146"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040913499891757965,
+    "id": "math-241"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04089561104774475,
+    "id": "general-070"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040893442928791046,
+    "id": "math-082"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04092394560575485,
+    "id": "general-145"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04088463634252548,
+    "id": "math-230"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040845565497875214,
+    "id": "general-147"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04087083786725998,
+    "id": "math-197"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04087318480014801,
+    "id": "general-021"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04098951071500778,
+    "id": "math-204"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04091877490282059,
+    "id": "general-208"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04082706570625305,
+    "id": "math-064"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04098084568977356,
+    "id": "general-221"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.0408988818526268,
+    "id": "math-104"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085935652256012,
+    "id": "general-058"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04088406264781952,
+    "id": "math-071"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0408928245306015,
+    "id": "general-142"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04094773530960083,
+    "id": "math-130"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04087076336145401,
+    "id": "general-160"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04083281755447388,
+    "id": "math-046"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04087028652429581,
+    "id": "general-196"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04085061699151993,
+    "id": "math-136"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04086776077747345,
+    "id": "general-004"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04091998189687729,
+    "id": "math-218"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040947288274765015,
+    "id": "general-194"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04086624085903168,
+    "id": "math-138"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04088340699672699,
+    "id": "general-043"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04170150309801102,
+    "id": "math-202"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04099245369434357,
+    "id": "general-155"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04570867121219635,
+    "id": "math-070"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040888555347919464,
+    "id": "general-151"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04087994247674942,
+    "id": "math-014"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040955476462841034,
+    "id": "general-240"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.0408993661403656,
+    "id": "math-234"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040915824472904205,
+    "id": "general-253"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04091217368841171,
+    "id": "math-206"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0408935472369194,
+    "id": "general-250"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.0408511683344841,
+    "id": "math-224"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04089892655611038,
+    "id": "general-115"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04090096801519394,
+    "id": "math-255"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04089696705341339,
+    "id": "general-032"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.0408993735909462,
+    "id": "math-144"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0409298911690712,
+    "id": "general-083"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040857695043087006,
+    "id": "math-148"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0409461185336113,
+    "id": "general-093"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04090564697980881,
+    "id": "math-088"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04086652398109436,
+    "id": "general-134"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040893420577049255,
+    "id": "math-108"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085978865623474,
+    "id": "general-089"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04089633375406265,
+    "id": "math-254"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04085706174373627,
+    "id": "general-011"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040829889476299286,
+    "id": "math-004"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04112841933965683,
+    "id": "general-057"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04451976716518402,
+    "id": "math-166"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04094681888818741,
+    "id": "general-069"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04102533310651779,
+    "id": "math-149"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040894366800785065,
+    "id": "general-071"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040965333580970764,
+    "id": "math-249"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.0408964529633522,
+    "id": "general-120"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04088350385427475,
+    "id": "math-200"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.041014790534973145,
+    "id": "general-009"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04087165743112564,
+    "id": "math-048"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04091479629278183,
+    "id": "general-110"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040930524468421936,
+    "id": "math-175"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04267839342355728,
+    "id": "general-008"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040936991572380066,
+    "id": "math-029"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.040921881794929504,
+    "id": "general-193"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04092445224523544,
+    "id": "math-075"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04093397408723831,
+    "id": "general-017"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04098793864250183,
+    "id": "math-122"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04089953005313873,
+    "id": "general-086"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040940627455711365,
+    "id": "math-030"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04094041883945465,
+    "id": "general-228"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04087742418050766,
+    "id": "math-118"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04090022295713425,
+    "id": "general-078"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040911197662353516,
+    "id": "math-028"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04095706343650818,
+    "id": "general-185"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04381807893514633,
+    "id": "math-217"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04097864776849747,
+    "id": "general-243"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040950171649456024,
+    "id": "math-178"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04114942252635956,
+    "id": "general-200"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.040962085127830505,
+    "id": "math-169"
+  },
+  {
+    "domain": "general",
+    "forward_and_statistics_seconds": 0.04092518240213394,
+    "id": "general-101"
+  },
+  {
+    "domain": "math",
+    "forward_and_statistics_seconds": 0.04109656810760498,
+    "id": "math-059"
+  }
+]

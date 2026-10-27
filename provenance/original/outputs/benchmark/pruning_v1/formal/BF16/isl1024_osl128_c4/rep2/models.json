@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "created": 1793132499,
+      "id": "qwen-prune-bf16",
+      "max_model_len": 8192,
+      "object": "model",
+      "owned_by": "vllm",
+      "parent": null,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1793132499,
+          "group": null,
+          "id": "modelperm-939edb9de6823a50",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ],
+      "root": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+    }
+  ],
+  "object": "list"
+}

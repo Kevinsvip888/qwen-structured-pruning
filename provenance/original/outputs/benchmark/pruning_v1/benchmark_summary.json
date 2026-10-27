@@ -1,0 +1,1954 @@
+{
+  "study": "pruning_serving_v1",
+  "methods": [
+    "BF16",
+    "RandomChannels",
+    "ActivationEnergy"
+  ],
+  "protocol_sha256": "947676903d7210320e4b7e809d75c3474ddc8a212c6f1b04cb7f39ab36ff91c8",
+  "summarizer_sha256": "89c4e10eaee5d8de4649e6397dd097e239b404db61112533a4c1ec00217ca5ae",
+  "gpu_identity": {
+    "driver": "580.76.05",
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+  },
+  "serve_environment": {
+    "freeze_sha256": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+    "installed": {
+      "packages": {
+        "safetensors": "0.8.0",
+        "torch": "2.13.0+cu132",
+        "transformers": "5.19.0",
+        "triton": "3.7.1",
+        "vllm": "0.32.0"
+      },
+      "python": "3.12.15"
+    }
+  },
+  "verified_formal_runs": 18,
+  "measured_requests": 3600,
+  "warmup_requests": 360,
+  "pilot_runs_included": false,
+  "aggregation": "Arithmetic mean and sample SD of three run-level metrics in each cell; ratio of mean throughputs.",
+  "primary_comparison": "ActivationEnergy versus BF16 at input 1024 / output 128 / concurrency 4",
+  "primary_results": {
+    "output_throughput_ratio_of_means": 1.0322367855785979,
+    "output_throughput_increase_percent": 3.223678557859788,
+    "latency_reduction_percent": {
+      "mean_ttft_ms": 3.87177511449589,
+      "mean_tpot_ms": 3.0220717985219747,
+      "mean_e2el_ms": 3.12203593887046
+    },
+    "sampled_memory_mean_of_run_maxima_saved_mib": 286.0,
+    "sampled_memory_mean_of_run_maxima_reduction_percent": 2.215165362868876,
+    "per_repetition_throughput_ratios": [
+      1.0313528462027821,
+      1.0328687975943656,
+      1.0324902471645816
+    ]
+  },
+  "cases": [
+    {
+      "input_tokens": 1024,
+      "output_tokens": 128,
+      "concurrency": 4,
+      "methods": {
+        "BF16": {
+          "output_throughput": {
+            "values": [
+              322.97642222252375,
+              322.29449306452625,
+              322.72182197772173
+            ],
+            "mean": 322.6642457549239,
+            "sample_sd": 0.34459122189275737,
+            "minimum": 322.29449306452625,
+            "maximum": 322.97642222252375
+          },
+          "mean_ttft_ms": {
+            "values": [
+              188.20043712854385,
+              187.17029355466366,
+              184.49036497622728
+            ],
+            "mean": 186.6203652198116,
+            "sample_sd": 1.9151957403757969,
+            "minimum": 184.49036497622728,
+            "maximum": 188.20043712854385
+          },
+          "mean_tpot_ms": {
+            "values": [
+              10.996023482811733,
+              11.03111101329092,
+              11.035886853053345
+            ],
+            "mean": 11.021007116385332,
+            "sample_sd": 0.021767834556152093,
+            "minimum": 10.996023482811733,
+            "maximum": 11.035886853053345
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1584.695419445634,
+              1588.1213922426105,
+              1586.047995314002
+            ],
+            "mean": 1586.2882690007489,
+            "sample_sd": 1.7255784493360533,
+            "minimum": 1584.695419445634,
+            "maximum": 1588.1213922426105
+          },
+          "p95_ttft_ms": {
+            "values": [
+              239.09628987312314,
+              240.02495370805264,
+              237.86458857357502
+            ],
+            "mean": 238.99527738491693,
+            "sample_sd": 1.0837190690611789,
+            "minimum": 237.86458857357502,
+            "maximum": 240.02495370805264
+          },
+          "p95_tpot_ms": {
+            "values": [
+              11.874713754560064,
+              11.892824928004911,
+              11.885736477891292
+            ],
+            "mean": 11.884425053485423,
+            "sample_sd": 0.00912652871395074,
+            "minimum": 11.874713754560064,
+            "maximum": 11.892824928004911
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1591.891298443079,
+              1595.8806958049536,
+              1593.2082060724497
+            ],
+            "mean": 1593.660066773494,
+            "sample_sd": 2.0327214264611415,
+            "minimum": 1591.891298443079,
+            "maximum": 1595.8806958049536
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12907.0,
+              12571.0,
+              12491.0
+            ],
+            "mean": 12656.333333333334,
+            "sample_sd": 220.738155590132,
+            "minimum": 12491.0,
+            "maximum": 12907.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12907.0,
+              12913.0,
+              12913.0
+            ],
+            "mean": 12911.0,
+            "sample_sd": 3.4641016151377544,
+            "minimum": 12907.0,
+            "maximum": 12913.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              29.0,
+              39.0,
+              32.0
+            ],
+            "mean": 33.333333333333336,
+            "sample_sd": 5.131601439446884,
+            "minimum": 29.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              67.0,
+              68.0,
+              68.0
+            ],
+            "mean": 67.66666666666667,
+            "sample_sd": 0.5773502691896257,
+            "minimum": 67.0,
+            "maximum": 68.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              325.85,
+              328.7,
+              327.61
+            ],
+            "mean": 327.38666666666666,
+            "sample_sd": 1.438065830667458,
+            "minimum": 325.85,
+            "maximum": 328.7
+          }
+        },
+        "RandomChannels": {
+          "output_throughput": {
+            "values": [
+              333.0213691648751,
+              332.6803792598254,
+              332.9818006713317
+            ],
+            "mean": 332.8945163653441,
+            "sample_sd": 0.18650051310993257,
+            "minimum": 332.6803792598254,
+            "maximum": 333.0213691648751
+          },
+          "mean_ttft_ms": {
+            "values": [
+              180.34864280372858,
+              181.81958071887493,
+              180.48996567726135
+            ],
+            "mean": 180.88606306662163,
+            "sample_sd": 0.8115321582952143,
+            "minimum": 180.34864280372858,
+            "maximum": 181.81958071887493
+          },
+          "mean_tpot_ms": {
+            "values": [
+              10.68193871850573,
+              10.682863060707653,
+              10.682256314756833
+            ],
+            "mean": 10.682352697990073,
+            "sample_sd": 0.00046964818992655574,
+            "minimum": 10.68193871850573,
+            "maximum": 10.682863060707653
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1536.9548600539565,
+              1538.5431894287467,
+              1537.136517651379
+            ],
+            "mean": 1537.5448557113607,
+            "sample_sd": 0.869340283851808,
+            "minimum": 1536.9548600539565,
+            "maximum": 1538.5431894287467
+          },
+          "p95_ttft_ms": {
+            "values": [
+              230.56423738598824,
+              232.6923280954361,
+              230.78659810125828
+            ],
+            "mean": 231.34772119422755,
+            "sample_sd": 1.1697593175551606,
+            "minimum": 230.56423738598824,
+            "maximum": 232.6923280954361
+          },
+          "p95_tpot_ms": {
+            "values": [
+              11.511904488163669,
+              11.524227854069762,
+              11.516835839729609
+            ],
+            "mean": 11.517656060654346,
+            "sample_sd": 0.006202492127193626,
+            "minimum": 11.511904488163669,
+            "maximum": 11.524227854069762
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1543.8148509711027,
+              1545.6763539463282,
+              1545.4070765525103
+            ],
+            "mean": 1544.9660938233137,
+            "sample_sd": 1.0060554941356499,
+            "minimum": 1543.8148509711027,
+            "maximum": 1545.6763539463282
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12207.0,
+              12285.0,
+              12207.0
+            ],
+            "mean": 12233.0,
+            "sample_sd": 45.033320996790806,
+            "minimum": 12207.0,
+            "maximum": 12285.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12625.0,
+              12625.0,
+              12625.0
+            ],
+            "mean": 12625.0,
+            "sample_sd": 0.0,
+            "minimum": 12625.0,
+            "maximum": 12625.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              28.0,
+              39.0,
+              29.0
+            ],
+            "mean": 32.0,
+            "sample_sd": 6.082762530298219,
+            "minimum": 28.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              66.0,
+              68.0,
+              66.0
+            ],
+            "mean": 66.66666666666667,
+            "sample_sd": 1.1547005383792515,
+            "minimum": 66.0,
+            "maximum": 68.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              323.51,
+              327.64,
+              323.76
+            ],
+            "mean": 324.96999999999997,
+            "sample_sd": 2.3156640516275213,
+            "minimum": 323.51,
+            "maximum": 327.64
+          }
+        },
+        "ActivationEnergy": {
+          "output_throughput": {
+            "values": [
+              333.10265231559134,
+              332.8879255228428,
+              333.20713373918204
+            ],
+            "mean": 333.0659038592054,
+            "sample_sd": 0.1627461462821199,
+            "minimum": 332.8879255228428,
+            "maximum": 333.20713373918204
+          },
+          "mean_ttft_ms": {
+            "values": [
+              177.6953423023224,
+              180.27658980339766,
+              180.2126009762287
+            ],
+            "mean": 179.39484436064959,
+            "sample_sd": 1.4721596643008534,
+            "minimum": 177.6953423023224,
+            "maximum": 180.27658980339766
+          },
+          "mean_tpot_ms": {
+            "values": [
+              10.699834518838585,
+              10.68737305759445,
+              10.676625528790819
+            ],
+            "mean": 10.687944368407951,
+            "sample_sd": 0.011615037743957292,
+            "minimum": 10.676625528790819,
+            "maximum": 10.699834518838585
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1536.5743261948228,
+              1537.5729681178927,
+              1536.1440431326628
+            ],
+            "mean": 1536.7637791484594,
+            "sample_sd": 0.7330593220093813,
+            "minimum": 1536.1440431326628,
+            "maximum": 1537.5729681178927
+          },
+          "p95_ttft_ms": {
+            "values": [
+              230.2656378597021,
+              233.39457921683788,
+              232.36593641340733
+            ],
+            "mean": 232.00871782998243,
+            "sample_sd": 1.5947640393979057,
+            "minimum": 230.2656378597021,
+            "maximum": 233.39457921683788
+          },
+          "p95_tpot_ms": {
+            "values": [
+              11.509842006122971,
+              11.499969370839164,
+              11.502399533165722
+            ],
+            "mean": 11.504070303375952,
+            "sample_sd": 0.005144009786471568,
+            "minimum": 11.499969370839164,
+            "maximum": 11.509842006122971
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1543.0608350783587,
+              1544.7375100106,
+              1542.7967011928558
+            ],
+            "mean": 1543.5316820939381,
+            "sample_sd": 1.0525955542460665,
+            "minimum": 1542.7967011928558,
+            "maximum": 1544.7375100106
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12207.0,
+              12285.0,
+              12207.0
+            ],
+            "mean": 12233.0,
+            "sample_sd": 45.033320996790806,
+            "minimum": 12207.0,
+            "maximum": 12285.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12625.0,
+              12625.0,
+              12625.0
+            ],
+            "mean": 12625.0,
+            "sample_sd": 0.0,
+            "minimum": 12625.0,
+            "maximum": 12625.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              29.0,
+              39.0,
+              29.0
+            ],
+            "mean": 32.333333333333336,
+            "sample_sd": 5.773502691896257,
+            "minimum": 29.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              66.0,
+              68.0,
+              64.0
+            ],
+            "mean": 66.0,
+            "sample_sd": 2.0,
+            "minimum": 64.0,
+            "maximum": 68.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              323.38,
+              328.58,
+              323.42
+            ],
+            "mean": 325.12666666666667,
+            "sample_sd": 2.990741268203129,
+            "minimum": 323.38,
+            "maximum": 328.58
+          }
+        }
+      },
+      "versus_bf16": {
+        "RandomChannels": {
+          "output_throughput_ratio_of_means": 1.031705622004957,
+          "output_throughput_increase_percent": 3.170562200495697,
+          "latency_reduction_percent": {
+            "mean_ttft_ms": 3.0727097476397014,
+            "mean_tpot_ms": 3.0728082725921646,
+            "mean_e2el_ms": 3.0727966815321084
+          },
+          "sampled_memory_mean_of_run_maxima_saved_mib": 286.0,
+          "sampled_memory_mean_of_run_maxima_reduction_percent": 2.215165362868876,
+          "per_repetition_throughput_ratios": [
+            1.0311011772104857,
+            1.0322248329363164,
+            1.0317920202319577
+          ]
+        },
+        "ActivationEnergy": {
+          "output_throughput_ratio_of_means": 1.0322367855785979,
+          "output_throughput_increase_percent": 3.223678557859788,
+          "latency_reduction_percent": {
+            "mean_ttft_ms": 3.87177511449589,
+            "mean_tpot_ms": 3.0220717985219747,
+            "mean_e2el_ms": 3.12203593887046
+          },
+          "sampled_memory_mean_of_run_maxima_saved_mib": 286.0,
+          "sampled_memory_mean_of_run_maxima_reduction_percent": 2.215165362868876,
+          "per_repetition_throughput_ratios": [
+            1.0313528462027821,
+            1.0328687975943656,
+            1.0324902471645816
+          ]
+        }
+      }
+    },
+    {
+      "input_tokens": 1024,
+      "output_tokens": 128,
+      "concurrency": 1,
+      "methods": {
+        "BF16": {
+          "output_throughput": {
+            "values": [
+              98.95865340105499,
+              98.84670172737812,
+              98.79692973127095
+            ],
+            "mean": 98.86742828656801,
+            "sample_sd": 0.08283012153796171,
+            "minimum": 98.79692973127095,
+            "maximum": 98.95865340105499
+          },
+          "mean_ttft_ms": {
+            "values": [
+              75.6305493041873,
+              75.79826541244984,
+              75.75346305966377
+            ],
+            "mean": 75.72742592543364,
+            "sample_sd": 0.08683675783832295,
+            "minimum": 75.6305493041873,
+            "maximum": 75.79826541244984
+          },
+          "mean_tpot_ms": {
+            "values": [
+              9.582371583545772,
+              9.593393697630702,
+              9.598914782010663
+            ],
+            "mean": 9.59156002106238,
+            "sample_sd": 0.00842265582700063,
+            "minimum": 9.582371583545772,
+            "maximum": 9.598914782010663
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1292.5917404145002,
+              1294.159265011549,
+              1294.8156403750181
+            ],
+            "mean": 1293.8555486003559,
+            "sample_sd": 1.142635332211867,
+            "minimum": 1292.5917404145002,
+            "maximum": 1294.8156403750181
+          },
+          "p95_ttft_ms": {
+            "values": [
+              80.14340102672577,
+              79.44056391716003,
+              79.76786866784094
+            ],
+            "mean": 79.78394453724225,
+            "sample_sd": 0.3516942220572227,
+            "minimum": 79.44056391716003,
+            "maximum": 80.14340102672577
+          },
+          "p95_tpot_ms": {
+            "values": [
+              9.596816110094702,
+              9.605913934862519,
+              9.61037728730149
+            ],
+            "mean": 9.604369110752904,
+            "sample_sd": 0.006911312679637594,
+            "minimum": 9.596816110094702,
+            "maximum": 9.61037728730149
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1296.5615779161453,
+              1297.3118841648102,
+              1298.4994105994701
+            ],
+            "mean": 1297.4576242268085,
+            "sample_sd": 0.9771023494977013,
+            "minimum": 1296.5615779161453,
+            "maximum": 1298.4994105994701
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12907.0,
+              12491.0,
+              12913.0
+            ],
+            "mean": 12770.333333333334,
+            "sample_sd": 241.928364052943,
+            "minimum": 12491.0,
+            "maximum": 12913.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12907.0,
+              12571.0,
+              12913.0
+            ],
+            "mean": 12797.0,
+            "sample_sd": 195.74473172987314,
+            "minimum": 12571.0,
+            "maximum": 12913.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              39.0,
+              30.0,
+              39.0
+            ],
+            "mean": 36.0,
+            "sample_sd": 5.196152422706632,
+            "minimum": 30.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              67.0,
+              67.0,
+              67.0
+            ],
+            "mean": 67.0,
+            "sample_sd": 0.0,
+            "minimum": 67.0,
+            "maximum": 67.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              342.33,
+              341.73,
+              342.47
+            ],
+            "mean": 342.1766666666667,
+            "sample_sd": 0.3931072796748119,
+            "minimum": 341.73,
+            "maximum": 342.47
+          }
+        },
+        "RandomChannels": {
+          "output_throughput": {
+            "values": [
+              101.97776654847007,
+              101.83508801180665,
+              101.86299927676023
+            ],
+            "mean": 101.89195127901232,
+            "sample_sd": 0.07561716096169933,
+            "minimum": 101.83508801180665,
+            "maximum": 101.97776654847007
+          },
+          "mean_ttft_ms": {
+            "values": [
+              74.6582967042923,
+              74.00018990039825,
+              75.95957230776548
+            ],
+            "mean": 74.87268630415201,
+            "sample_sd": 0.9971293947984164,
+            "minimum": 74.00018990039825,
+            "maximum": 75.95957230776548
+          },
+          "mean_tpot_ms": {
+            "values": [
+              9.289205503158682,
+              9.307897685198334,
+              9.288888296156417
+            ],
+            "mean": 9.295330494837811,
+            "sample_sd": 0.010884661696111329,
+            "minimum": 9.288888296156417,
+            "maximum": 9.307897685198334
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1254.387395605445,
+              1256.1031959205866,
+              1255.6483859196305
+            ],
+            "mean": 1255.379659148554,
+            "sample_sd": 0.8889056409315781,
+            "minimum": 1254.387395605445,
+            "maximum": 1256.1031959205866
+          },
+          "p95_ttft_ms": {
+            "values": [
+              81.0349229723215,
+              77.72100381553172,
+              82.07507394254208
+            ],
+            "mean": 80.2770002434651,
+            "sample_sd": 2.2738330666341473,
+            "minimum": 77.72100381553172,
+            "maximum": 82.07507394254208
+          },
+          "p95_tpot_ms": {
+            "values": [
+              9.302042395345806,
+              9.320413297790243,
+              9.305217222669933
+            ],
+            "mean": 9.30922430526866,
+            "sample_sd": 0.009819116425143324,
+            "minimum": 9.302042395345806,
+            "maximum": 9.320413297790243
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1260.5872340500355,
+              1259.6644755452871,
+              1261.1254274845123
+            ],
+            "mean": 1260.4590456932783,
+            "sample_sd": 0.7388635417230588,
+            "minimum": 1259.6644755452871,
+            "maximum": 1261.1254274845123
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12625.0,
+              12207.0,
+              12625.0
+            ],
+            "mean": 12485.666666666666,
+            "sample_sd": 241.33241252126356,
+            "minimum": 12207.0,
+            "maximum": 12625.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12625.0,
+              12285.0,
+              12625.0
+            ],
+            "mean": 12511.666666666666,
+            "sample_sd": 196.29909152447277,
+            "minimum": 12285.0,
+            "maximum": 12625.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              39.0,
+              29.0,
+              39.0
+            ],
+            "mean": 35.666666666666664,
+            "sample_sd": 5.773502691896257,
+            "minimum": 29.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              67.0,
+              67.0,
+              67.0
+            ],
+            "mean": 67.0,
+            "sample_sd": 0.0,
+            "minimum": 67.0,
+            "maximum": 67.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              341.31,
+              340.33,
+              341.94
+            ],
+            "mean": 341.1933333333333,
+            "sample_sd": 0.8113158036999807,
+            "minimum": 340.33,
+            "maximum": 341.94
+          }
+        },
+        "ActivationEnergy": {
+          "output_throughput": {
+            "values": [
+              101.87782197841227,
+              101.9280647314252,
+              101.78552919318972
+            ],
+            "mean": 101.86380530100907,
+            "sample_sd": 0.07229415847140487,
+            "minimum": 101.78552919318972,
+            "maximum": 101.9280647314252
+          },
+          "mean_ttft_ms": {
+            "values": [
+              75.14364898204803,
+              75.04404794424772,
+              76.33536919951439
+            ],
+            "mean": 75.50768870860338,
+            "sample_sd": 0.7185202418573459,
+            "minimum": 75.04404794424772,
+            "maximum": 76.33536919951439
+          },
+          "mean_tpot_ms": {
+            "values": [
+              9.294417317458025,
+              9.291384223056589,
+              9.293705655305873
+            ],
+            "mean": 9.293169065273496,
+            "sample_sd": 0.0015861469223060135,
+            "minimum": 9.291384223056589,
+            "maximum": 9.294417317458025
+          },
+          "mean_e2el_ms": {
+            "values": [
+              1255.5346482992172,
+              1255.0498442724347,
+              1256.6359874233603
+            ],
+            "mean": 1255.7401599983375,
+            "sample_sd": 0.8127969104662808,
+            "minimum": 1255.0498442724347,
+            "maximum": 1256.6359874233603
+          },
+          "p95_ttft_ms": {
+            "values": [
+              80.42493686079979,
+              80.00941798090933,
+              82.99625776708126
+            ],
+            "mean": 81.14353753626347,
+            "sample_sd": 1.6178977641209364,
+            "minimum": 80.00941798090933,
+            "maximum": 82.99625776708126
+          },
+          "p95_tpot_ms": {
+            "values": [
+              9.313627707911289,
+              9.311485994519211,
+              9.31141177617659
+            ],
+            "mean": 9.312175159535697,
+            "sample_sd": 0.001258491032217827,
+            "minimum": 9.31141177617659,
+            "maximum": 9.313627707911289
+          },
+          "p95_e2el_ms": {
+            "values": [
+              1259.6485268324614,
+              1259.4280883669853,
+              1262.3711474239826
+            ],
+            "mean": 1260.4825875411432,
+            "sample_sd": 1.6392504697478283,
+            "minimum": 1259.4280883669853,
+            "maximum": 1262.3711474239826
+          },
+          "sampled_min_used_mib": {
+            "values": [
+              12625.0,
+              12207.0,
+              12625.0
+            ],
+            "mean": 12485.666666666666,
+            "sample_sd": 241.33241252126356,
+            "minimum": 12207.0,
+            "maximum": 12625.0
+          },
+          "sampled_max_used_mib": {
+            "values": [
+              12625.0,
+              12285.0,
+              12625.0
+            ],
+            "mean": 12511.666666666666,
+            "sample_sd": 196.29909152447277,
+            "minimum": 12285.0,
+            "maximum": 12625.0
+          },
+          "sampled_min_temperature_c": {
+            "values": [
+              39.0,
+              31.0,
+              38.0
+            ],
+            "mean": 36.0,
+            "sample_sd": 4.358898943540674,
+            "minimum": 31.0,
+            "maximum": 39.0
+          },
+          "sampled_max_temperature_c": {
+            "values": [
+              67.0,
+              67.0,
+              67.0
+            ],
+            "mean": 67.0,
+            "sample_sd": 0.0,
+            "minimum": 67.0,
+            "maximum": 67.0
+          },
+          "sampled_max_power_w": {
+            "values": [
+              341.28,
+              340.96,
+              340.39
+            ],
+            "mean": 340.87666666666667,
+            "sample_sd": 0.4508140784551069,
+            "minimum": 340.39,
+            "maximum": 341.28
+          }
+        }
+      },
+      "versus_bf16": {
+        "RandomChannels": {
+          "output_throughput_ratio_of_means": 1.0305917028981244,
+          "output_throughput_increase_percent": 3.0591702898124407,
+          "latency_reduction_percent": {
+            "mean_ttft_ms": 1.12870549980566,
+            "mean_tpot_ms": 3.0884394777707658,
+            "mean_e2el_ms": 2.9737391854464335
+          },
+          "sampled_memory_mean_of_run_maxima_saved_mib": 285.33333333333394,
+          "sampled_memory_mean_of_run_maxima_reduction_percent": 2.2296892500846655,
+          "per_repetition_throughput_ratios": [
+            1.0305088341812754,
+            1.0302325341382719,
+            1.0310340569674488
+          ]
+        },
+        "ActivationEnergy": {
+          "output_throughput_ratio_of_means": 1.0303070188672858,
+          "output_throughput_increase_percent": 3.0307018867285818,
+          "latency_reduction_percent": {
+            "mean_ttft_ms": 0.290168606875163,
+            "mean_tpot_ms": 3.110974180776005,
+            "mean_e2el_ms": 2.945876658584501
+          },
+          "sampled_memory_mean_of_run_maxima_saved_mib": 285.33333333333394,
+          "sampled_memory_mean_of_run_maxima_reduction_percent": 2.2296892500846655,
+          "per_repetition_throughput_ratios": [
+            1.029498871266231,
+            1.0311731494344198,
+            1.0302499224424058
+          ]
+        }
+      }
+    }
+  ],
+  "checkpoint_sizes": [
+    {
+      "method": "BF16",
+      "unique_parameters": 4022468096,
+      "mlp_width": 9728,
+      "safetensors_files": 3,
+      "safetensors_file_bytes": 8044982000,
+      "bf16_parameter_payload_bytes": 8044936192,
+      "parameter_reduction_percent": 0.0,
+      "safetensors_file_reduction_mib": 0.0,
+      "safetensors_file_reduction_percent": 0.0,
+      "safetensors_gib": 7.492473348975182
+    },
+    {
+      "method": "RandomChannels",
+      "unique_parameters": 3880910336,
+      "mlp_width": 9216,
+      "safetensors_files": 4,
+      "safetensors_file_bytes": 7761866280,
+      "bf16_parameter_payload_bytes": 7761820672,
+      "parameter_reduction_percent": 3.519176700015769,
+      "safetensors_file_reduction_mib": 270.0001907348633,
+      "safetensors_file_reduction_percent": 3.519159147901141,
+      "safetensors_gib": 7.228801287710667
+    },
+    {
+      "method": "ActivationEnergy",
+      "unique_parameters": 3880910336,
+      "mlp_width": 9216,
+      "safetensors_files": 4,
+      "safetensors_file_bytes": 7761866280,
+      "bf16_parameter_payload_bytes": 7761820672,
+      "parameter_reduction_percent": 3.519176700015769,
+      "safetensors_file_reduction_mib": 270.0001907348633,
+      "safetensors_file_reduction_percent": 3.519159147901141,
+      "safetensors_gib": 7.228801287710667
+    }
+  ],
+  "runs": [
+    {
+      "method": "BF16",
+      "concurrency": 4,
+      "repetition": 1,
+      "schedule_ordinal": 1,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c4/rep1",
+      "requests": 200,
+      "receipt_sha256": "dc6fea260b8b671eece29df44d4136f6c1e4e3a2cd5cd41e816ea4114b0813ca",
+      "file_sha256": {
+        "benchmark.json": "ebd5812bcc708270eeceb57976956c37517dc9ec7f323a9edb441fb37cdafd56",
+        "client.log": "f7e817d03649c1c182e4fe463ac48185ca575e562c1b9adcf08916e4a747c3cd",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "35606de934103ff59a08906fcd5df0e923eb6ba08bc7ebce0a3c2a7a9dd5a235",
+        "gpu_before.txt": "df569cd3319b54a54b716d5a9ba1fc1ccaebe7b76408ccba050ddd9ba0dd2038",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "d16e7ca1bb81b123dfcd3c2e6c399e042a3a912ffefeaaf64da5820c2853936a",
+        "memory_summary.json": "96959af89da526c6e5a1551da089eb74319383e29a1b6a0c854fd664bf063640",
+        "models.json": "1822b6b10c2a0523301e29c1b61c88aebce50c97354aa5b194b3518382882c35",
+        "run_manifest.json": "5950b45fe720c857d2bcd486032ab1187e5646679ee7ec6e6f589e7feeb8ceca",
+        "server_after.log": "176f62096a36e72131a21da749cf58ab11533a20cc523deb9f798128890b7307",
+        "server_before.log": "3a23dd2bf70992bd945ce32a66c77c1e6cce52e4bf6aed937212c9473045785c"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 129377,
+      "metrics": {
+        "output_throughput": 322.97642222252375,
+        "mean_ttft_ms": 188.20043712854385,
+        "mean_tpot_ms": 10.996023482811733,
+        "mean_e2el_ms": 1584.695419445634,
+        "p95_ttft_ms": 239.09628987312314,
+        "p95_tpot_ms": 11.874713754560064,
+        "p95_e2el_ms": 1591.891298443079
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 100,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12907.0,
+        "sampled_max_used_mib": 12907.0,
+        "sampled_min_temperature_c": 29.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 325.85
+      }
+    },
+    {
+      "method": "BF16",
+      "concurrency": 1,
+      "repetition": 1,
+      "schedule_ordinal": 2,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c1/rep1",
+      "requests": 200,
+      "receipt_sha256": "8c4f71a622b65919b4cd2f0c31159ef222a202244ef456232b17b3596448d9d7",
+      "file_sha256": {
+        "benchmark.json": "f1decac638029655a236ff55c4edd3a85d47b09228c534d7538da2c4c39f64ef",
+        "client.log": "12109dda83726e9e95b83e06b3eade1a8a0edaf7a57c1dedec66418a23a6f02a",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "3dac5f44fbe4677ed690876b0a66b6a2eacf54a840ecd719fe605a3a8ca77086",
+        "gpu_before.txt": "234b4a9c03951b8916902ec12f11e1548fd48a3826b0671e2e0a96c90d6a0a2a",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "296b1cace23c2fa4e6bd16388d556926900c466d659e4c0718a61e373db8b6b5",
+        "memory_summary.json": "33df81f09b054d06630afe25024a00987c33bf5cf9b9222faa1c49536e05dde2",
+        "models.json": "af1b31e4590696647da0e10bd825f151de1104f2912a50090635a46e6bce9ad9",
+        "run_manifest.json": "437cc2ece23fb9c9d2c951b21eea2665c61feeef44cef80e81826db81cea43fa",
+        "server_after.log": "fc6e62052b0da3b9a562a0604c004d6170c50381c5711c5c68cf86f8063e6d48",
+        "server_before.log": "748e7d30b321069f29317f373aa3655aa4f0bf41d83bc55e581d02f463f4cd14"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 129377,
+      "metrics": {
+        "output_throughput": 98.95865340105499,
+        "mean_ttft_ms": 75.6305493041873,
+        "mean_tpot_ms": 9.582371583545772,
+        "mean_e2el_ms": 1292.5917404145002,
+        "p95_ttft_ms": 80.14340102672577,
+        "p95_tpot_ms": 9.596816110094702,
+        "p95_e2el_ms": 1296.5615779161453
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 298,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12907.0,
+        "sampled_max_used_mib": 12907.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 342.33
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 4,
+      "repetition": 1,
+      "schedule_ordinal": 3,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c4/rep1",
+      "requests": 200,
+      "receipt_sha256": "3ee2f72ea287db9f84b15c8b7172600a174600c1bca9903d44beb7cbd44c5177",
+      "file_sha256": {
+        "benchmark.json": "5516b2ddf015cf647ad3660ebd34714d2f28f89f68e79a1669f2597528260f7a",
+        "client.log": "502bb690178223d776d1a2a93c819d5d10290441da45ece30ead729847ceebfb",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "1901ef91b264b6c21975d0ada9e34ee987f2734429a9e9110c4028d36a7efbf4",
+        "gpu_before.txt": "64ba6ab1ede97f64d581df1f92e61d72fbbea5d5c4a9b0c13ddcae16c3ad22cc",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "4874cd689f6ef1716af8ac302d6004ca9f8822449b31b0875844921737836756",
+        "memory_summary.json": "689617ebea1239d02de91180466da2fc0a9c9e0a35c6b0cfbdd5e69b4449672f",
+        "models.json": "c05eedca6eb0ac2e12db168f57e0340323050780a4e499c1f5c2e6569509543d",
+        "run_manifest.json": "9d1c6022c9c750ebbf6c07e5e28676980d909169440d5677173c2b4d86a758e5",
+        "server_after.log": "7a4fa2b0b51f1ad10cba4171e2a537329f8a229569745e09488b6bea88e37a43",
+        "server_before.log": "3daae589cc3ea78058da7cc7ee12f39f33b5276ad831f0ad1d5f90c4fa61d3e0"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 133825,
+      "metrics": {
+        "output_throughput": 333.0213691648751,
+        "mean_ttft_ms": 180.34864280372858,
+        "mean_tpot_ms": 10.68193871850573,
+        "mean_e2el_ms": 1536.9548600539565,
+        "p95_ttft_ms": 230.56423738598824,
+        "p95_tpot_ms": 11.511904488163669,
+        "p95_e2el_ms": 1543.8148509711027
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 98,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 28.0,
+        "sampled_max_temperature_c": 66.0,
+        "sampled_max_power_w": 323.51
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 1,
+      "repetition": 1,
+      "schedule_ordinal": 4,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c1/rep1",
+      "requests": 200,
+      "receipt_sha256": "2a469389737eacc5214fa69ef675e8d53fd21349253a0b7ecd2d64dd2dc4f0da",
+      "file_sha256": {
+        "benchmark.json": "464d52c292b1e190c2f941d76f3921f53868350a03d0346b0fcfe60bacd4d00b",
+        "client.log": "04e243706588d3c027b8929f910c0f3b772334c978a38e81af1330429530eb11",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "c8a53caba8bfa23ccae255e028b4f384359f24676ff3c167c9774394acb5bb03",
+        "gpu_before.txt": "47b56f76ecbb267979690b1c698c6ef9289e677a8aa37a1c9fb7901ea67b1388",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "7278aeb6ac8b365156160a90f4759253be72a2d7055ac60a7b632727816ad967",
+        "memory_summary.json": "94200f1cb7292c737e122de6d8994d8469ebd702ad50676853231adba82c07cc",
+        "models.json": "0eb0989c8a83c599d8865ebe61bb981125f276786129f208004d0581f034be65",
+        "run_manifest.json": "53703eff1c7e68aec3fabfd579d5da657398df6bed6dafcb3abf4f7ae1bd5434",
+        "server_after.log": "2c01b2ccaca80cfa53766cf4c1d8f6740dfa60c18b840a52d66ce19ff635054f",
+        "server_before.log": "a3a4c24949bc1d4c21590317fa0d94603df570a5a71bbb60605215e2a883a2f4"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 133825,
+      "metrics": {
+        "output_throughput": 101.97776654847007,
+        "mean_ttft_ms": 74.6582967042923,
+        "mean_tpot_ms": 9.289205503158682,
+        "mean_e2el_ms": 1254.387395605445,
+        "p95_ttft_ms": 81.0349229723215,
+        "p95_tpot_ms": 9.302042395345806,
+        "p95_e2el_ms": 1260.5872340500355
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 289,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12625.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 341.31
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 4,
+      "repetition": 1,
+      "schedule_ordinal": 5,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c4/rep1",
+      "requests": 200,
+      "receipt_sha256": "fa67a7018329b807b2ed73b1db6d5c5d0a34afd0c6bbe0f3b818a9cb327a1cab",
+      "file_sha256": {
+        "benchmark.json": "c978eac97ac82c7f2b15cb33e5449edee4adff811c91984168dc14bc58a70ec2",
+        "client.log": "8d0adfa3ec500d09d758147230303bd2a93e2f0e7abee27e65b692c572797867",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "f8b98e99d0fe84974528a724d62baf29d8e5617b7ef48e9d9b107f058d2a251a",
+        "gpu_before.txt": "fe1ad90e14f39aab6721f6f3985fe93c79fdecc6711d0084a53f4a2af22db3b4",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "8008fcd58cd7c6c9b3179857586a1b7487ac6d6f52206de29e80c0b3bc677465",
+        "memory_summary.json": "31ae756b528cb6deee29a01b3d77e953afe7bfa265230febc63311ef2720148f",
+        "models.json": "9f4d266dce6f22cd2c536c23ffd8f15e7331231c0d85c5861a223b9ee94d023e",
+        "run_manifest.json": "f01c6dea04acf8b3005fdc06dbc626072978df15c1ad341f673e78ce14dbafc2",
+        "server_after.log": "61d00881d4fb8f5428ca8feb2056b34e7fc6bb70aeeeda6a884ade448f01d417",
+        "server_before.log": "bc95cf07e2fa7b361efc45ce917aa2029fab84fb0c8912fb18b8710de57c84c5"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 135756,
+      "metrics": {
+        "output_throughput": 333.10265231559134,
+        "mean_ttft_ms": 177.6953423023224,
+        "mean_tpot_ms": 10.699834518838585,
+        "mean_e2el_ms": 1536.5743261948228,
+        "p95_ttft_ms": 230.2656378597021,
+        "p95_tpot_ms": 11.509842006122971,
+        "p95_e2el_ms": 1543.0608350783587
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 99,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 29.0,
+        "sampled_max_temperature_c": 66.0,
+        "sampled_max_power_w": 323.38
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 1,
+      "repetition": 1,
+      "schedule_ordinal": 6,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c1/rep1",
+      "requests": 200,
+      "receipt_sha256": "bb32071980aebed6f56faf88eb9171a5a67185eb9ed23875d32be3b60d3e6731",
+      "file_sha256": {
+        "benchmark.json": "f2c6506a759886c75c239e942625fc75fa87ba72cdc45dd17ec88c028bf7b82a",
+        "client.log": "6aaeac0f466a541472d5f622df6332365050da8322d3a3b6646673663aaf9a59",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "ae196ea585b204f75da51cae3a60e6f1d7697e31a691a75a466443fcb0847ec9",
+        "gpu_before.txt": "41cc90befc44ddd684e4ddce2b6eeab632aa71cb8cf4a2009a52f3cdb5c4b3f8",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "4fad726b89d2b9ce69f9ea66b58e168434ababae41acab50aaa5d3a45d90ea20",
+        "memory_summary.json": "598de503074238c4a4dfc8a3cf94ecf3abd24e693faa6609a1027cb25f5ae78f",
+        "models.json": "739225d522bd003845e284855ee63fa87c292447f6c0915de4a5357eaedca113",
+        "run_manifest.json": "17b3c5ecbbda92812e4f21da95039f515e0d46cb3ca85a35ab8a7f2314c6b7ad",
+        "server_after.log": "2ab8e15014fe0fad3ec58eab12257cc6e6c6b978594fe905d3a3fb1f2bca8c2d",
+        "server_before.log": "ab26fe0db65322d6c5c143d888f130f4f53365799aad4fc2f237b60118c5eec3"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 135756,
+      "metrics": {
+        "output_throughput": 101.87782197841227,
+        "mean_ttft_ms": 75.14364898204803,
+        "mean_tpot_ms": 9.294417317458025,
+        "mean_e2el_ms": 1255.5346482992172,
+        "p95_ttft_ms": 80.42493686079979,
+        "p95_tpot_ms": 9.313627707911289,
+        "p95_e2el_ms": 1259.6485268324614
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 290,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12625.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 341.28
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 1,
+      "repetition": 2,
+      "schedule_ordinal": 7,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c1/rep2",
+      "requests": 200,
+      "receipt_sha256": "782bcad3f0948420dd52d9fc257e0bf24a881952e0db3b1816ad427e05e2383c",
+      "file_sha256": {
+        "benchmark.json": "85d051bb66bbe1361fdaa629612d38a8f132d2a7ae90756e9d75c810f1102ed6",
+        "client.log": "455ea0cdc49b116e63f8948ea29d7c0e0b62d80029574c1ab46a859a35f0640f",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "2483c8c7a0678a67baf944c8d4099e4f50b0eed965e375e71d847d2be6c55f3f",
+        "gpu_before.txt": "e28c776913d39da2bf0e6a6a6af5c4fdaf2faf1b80e33933c96a2e01a0bb6051",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "a6ace51b64469b36195ac5a651896c3bf57c965ccc61cd75928fb88fe453b862",
+        "memory_summary.json": "70363dc7da4abf09c75f9705b2cb3da1b077c5b8ae55ca712ccedabcf1118eeb",
+        "models.json": "b7f891e977d98ae8e68f2e59b5c839b43a2bbe00c4d0538d0e008dcb10ff5f41",
+        "run_manifest.json": "ff07e4a172a8221ea192039a0b14e2adad7ab30103c16c6b4ab55f7862ba7971",
+        "server_after.log": "0e0b011f70a2534bfaec365ba2cc763126c048c7e29638a9a14d208a3c1cb48c",
+        "server_before.log": "cd8928c0414107a5cd7a8b56b72f51c824203730f1e3ad4509e1fd6d69cd2a8c"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 136784,
+      "metrics": {
+        "output_throughput": 101.83508801180665,
+        "mean_ttft_ms": 74.00018990039825,
+        "mean_tpot_ms": 9.307897685198334,
+        "mean_e2el_ms": 1256.1031959205866,
+        "p95_ttft_ms": 77.72100381553172,
+        "p95_tpot_ms": 9.320413297790243,
+        "p95_e2el_ms": 1259.6644755452871
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 289,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12285.0,
+        "sampled_min_temperature_c": 29.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 340.33
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 4,
+      "repetition": 2,
+      "schedule_ordinal": 8,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c4/rep2",
+      "requests": 200,
+      "receipt_sha256": "9ccb690f45d9f04e8bb54658f4be9fc627723bb75aceb20278edf1ce1a9f0459",
+      "file_sha256": {
+        "benchmark.json": "fa3bbf2884aff79f8c160e7f5102266684f9ec7b0ea2e62ef45a27e7836d28d1",
+        "client.log": "32e64d57cac11da241aafb163314b4d28f201e7a4fcad273da062629a32503a9",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "a87dec167fddd1bd40288cb2c6313e16be586ba894d0af6fcafc881cb6115a56",
+        "gpu_before.txt": "654e359c00981fa87763c471552d29a1a36ee6bc1e85b27dbc12e8e42694de10",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "449dab1c066b560e258fe4f738f4c97434697fd8bbd27d9c89db4169e0f60611",
+        "memory_summary.json": "0562d1f7e28b69b2419aadce3dff4e02eb2e187b66f928fe8a1834933274f233",
+        "models.json": "4cdd83c12da2e9a5294f462ba773670eae21463456eb6a7991b06dd8d65df5a6",
+        "run_manifest.json": "f015ddbd8665621fddfd2e593ee88ea773455bf583f86fc7145eddae2f1f47a4",
+        "server_after.log": "b896cb83a510e40c51d8a44c791a7d92c6209c5e7c2212fb1f6299b3f456154b",
+        "server_before.log": "596203ebb5f7acfcb350af08cff82ecf84eabe6eedf774e36430a1542c6700ec"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 136784,
+      "metrics": {
+        "output_throughput": 332.6803792598254,
+        "mean_ttft_ms": 181.81958071887493,
+        "mean_tpot_ms": 10.682863060707653,
+        "mean_e2el_ms": 1538.5431894287467,
+        "p95_ttft_ms": 232.6923280954361,
+        "p95_tpot_ms": 11.524227854069762,
+        "p95_e2el_ms": 1545.6763539463282
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 98,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12285.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 68.0,
+        "sampled_max_power_w": 327.64
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 1,
+      "repetition": 2,
+      "schedule_ordinal": 9,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c1/rep2",
+      "requests": 200,
+      "receipt_sha256": "27587755c0060cb93e2cf9a1d5fdf687e23a51ef14dc995d24f809d560e5ccab",
+      "file_sha256": {
+        "benchmark.json": "2647f7b8c0d5444fdf1b9540dc4620f5c3836004c5ba3ddd2f669aed6f977955",
+        "client.log": "33b308aa52240863061dc481caa1e24ac1740e75857e77e067ca4be5a05e49a0",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "f024192e509017f57bcb8287b8535b665bec4f8d8042b0794961fe9916757ed5",
+        "gpu_before.txt": "97e026fc9f63db70c69b3aedc53ba21102993499e5150c6e99b53c0259e0ae75",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "16590c04055e7546d6a2543e21e202de45e221b25b4765899b4bbd03103cb541",
+        "memory_summary.json": "7bc390ee214b94f1b5586b8629a00c5d8c1dead74635dbb58e9a77ec696f8644",
+        "models.json": "829daf6dba12ff669190d470a1fdaf71bdbe08c37a99b2ee05cd9560d77cbbb7",
+        "run_manifest.json": "e9b90ff2e9fca8fc0be82ed581e46876f5f97d9ac33bf4cd7a170ad41df39060",
+        "server_after.log": "7d1b1475eae757e6f5f6f96af97a0b0c4736221e031ad776ffddcf61364718a2",
+        "server_before.log": "a7d43e5ec9ed12b5edc30899c0b03f46c3a66182abcff939ea7b57b68c828d8e"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 137497,
+      "metrics": {
+        "output_throughput": 101.9280647314252,
+        "mean_ttft_ms": 75.04404794424772,
+        "mean_tpot_ms": 9.291384223056589,
+        "mean_e2el_ms": 1255.0498442724347,
+        "p95_ttft_ms": 80.00941798090933,
+        "p95_tpot_ms": 9.311485994519211,
+        "p95_e2el_ms": 1259.4280883669853
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 290,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12285.0,
+        "sampled_min_temperature_c": 31.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 340.96
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 4,
+      "repetition": 2,
+      "schedule_ordinal": 10,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c4/rep2",
+      "requests": 200,
+      "receipt_sha256": "f9fca9c7a01cd10acd239bb5e39deea7495c430ddbe38466aaa81367c2b47a24",
+      "file_sha256": {
+        "benchmark.json": "6707c2290c3cc7619d6fdfb0605448baf0be1fa866f5c05569f107ca66be5065",
+        "client.log": "24ee4b1b781f9dd1c78345f71646ba9f4155df2aaee1c15e183f8395df58ca0a",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "a8d7649fb756963256dd7fef4a9878158113b07d5dbe4300825e1115fd027ff8",
+        "gpu_before.txt": "4688fb97594e920d0bc785f343e70d130d00385e44c01583252462c1815e66f6",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "04adc8f4ddeb9704c1f5a1950c422f5ed9f9bf47c9d059362db17d02924169a4",
+        "memory_summary.json": "d9ed528ccebad96f8c737b0494bd073b4d6a81ec7adb399b1816b7fc22723656",
+        "models.json": "75ffcb5e84ff280570ea8f25863b86902afaadfa30c234b788b60663f42a9afb",
+        "run_manifest.json": "5b09e0bd34e80b2d1263dc76c5c8edd181cea303d032f150913496ec73ea4e7c",
+        "server_after.log": "df809f643bd921d535cca9618e80a0f292c3cbbee38f5d6770be1e09ebb80b81",
+        "server_before.log": "5fe7682e5daf1fa7d42a874bb02d1711567cfe7db70f9f9aeaf75e8f17a79926"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 137497,
+      "metrics": {
+        "output_throughput": 332.8879255228428,
+        "mean_ttft_ms": 180.27658980339766,
+        "mean_tpot_ms": 10.68737305759445,
+        "mean_e2el_ms": 1537.5729681178927,
+        "p95_ttft_ms": 233.39457921683788,
+        "p95_tpot_ms": 11.499969370839164,
+        "p95_e2el_ms": 1544.7375100106
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 99,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12285.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 68.0,
+        "sampled_max_power_w": 328.58
+      }
+    },
+    {
+      "method": "BF16",
+      "concurrency": 1,
+      "repetition": 2,
+      "schedule_ordinal": 11,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c1/rep2",
+      "requests": 200,
+      "receipt_sha256": "2a40029a613d33cf8d530e276400c344d0bed26628901a9481cef52496d850d0",
+      "file_sha256": {
+        "benchmark.json": "e1a2ead922f271337cb63ccaa8f677ed1e82f45073016abd9360a446236901bf",
+        "client.log": "31767b5977b8d2c85d64cbe42af34d35fcc8fcabc3fcf38e27642f489f8b2ebc",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "e75dc4c08b94e19538932a2dc678f18ca9a369cb7af0015a936a4f692d21aa92",
+        "gpu_before.txt": "40622600caaf287e3908371110a04ec8f81d3b1105c923e8e493cbd6bfedbb46",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "a963f8559f526dd2508c056c81f55ec091fe98de84bd87aa4a3f312fe37ffe94",
+        "memory_summary.json": "a0544d3524f320661047a8ae9ebc108d6f61e51331efb2571b15370e2b1e29db",
+        "models.json": "5d1bd1ff6d932d3e356239b875e42c1c627afd6309d694919adbfa3e8cb8603f",
+        "run_manifest.json": "97d08747841bb473b0f467ebb4b0728fd61c65f1778e6d289d4c67dca795bfe2",
+        "server_after.log": "ecdaca04548b9bccab057fb785a520f3af4e15ec046f1b7322b92f187db51eb9",
+        "server_before.log": "1f87374dd7a6e4f7ff9c4b13dd61fca08adb8eba7cf6fedf57a6d5def1817b0f"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 138237,
+      "metrics": {
+        "output_throughput": 98.84670172737812,
+        "mean_ttft_ms": 75.79826541244984,
+        "mean_tpot_ms": 9.593393697630702,
+        "mean_e2el_ms": 1294.159265011549,
+        "p95_ttft_ms": 79.44056391716003,
+        "p95_tpot_ms": 9.605913934862519,
+        "p95_e2el_ms": 1297.3118841648102
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 298,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12491.0,
+        "sampled_max_used_mib": 12571.0,
+        "sampled_min_temperature_c": 30.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 341.73
+      }
+    },
+    {
+      "method": "BF16",
+      "concurrency": 4,
+      "repetition": 2,
+      "schedule_ordinal": 12,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c4/rep2",
+      "requests": 200,
+      "receipt_sha256": "ecefdcc3f7e9fbdf60fb7f4f61437fee2a5546bfa76d310f7563bbda1407d335",
+      "file_sha256": {
+        "benchmark.json": "6aa7ec65f6438455a470e41cb591c9f50b0df7c93ec5d44db0fe021790eac063",
+        "client.log": "52cfae8549bb6ab5009af99868084635ba0e97eb4b6f90c696b0cd8658e2173b",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "0c25136bda85f990a1e5cf6b773e4462d01a61aaed73d77fdd300ee9b9ecf8bc",
+        "gpu_before.txt": "3827dc62ace5a8c124f62f3a2c51925e849163c1dee5b38ee0bb18da5fbb8034",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "08ab3448d83b02734d231dab0b6704d08f04a67d224e5ceeafd1e071f59a2c56",
+        "memory_summary.json": "58a583274b523ba61bacac4f1487913ac849fafbcc6cd0fdcd606f29627b06ec",
+        "models.json": "4c809fe7236a297bdf6f1b842f943b04465294e8bbcdc49a2c0c0e4177225492",
+        "run_manifest.json": "6b50755803c4b3d1c4834ee0ba0ea65d00b127450350f49da30654b66f1c88bd",
+        "server_after.log": "6b444b408e22d113d32aff77a19a68545a168cb45cb039cc931b9a83afde9470",
+        "server_before.log": "3a992a9c16dab541eb1031809bb53bee42cf7614feb344384178424c8776edd7"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 138237,
+      "metrics": {
+        "output_throughput": 322.29449306452625,
+        "mean_ttft_ms": 187.17029355466366,
+        "mean_tpot_ms": 11.03111101329092,
+        "mean_e2el_ms": 1588.1213922426105,
+        "p95_ttft_ms": 240.02495370805264,
+        "p95_tpot_ms": 11.892824928004911,
+        "p95_e2el_ms": 1595.8806958049536
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 100,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12571.0,
+        "sampled_max_used_mib": 12913.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 68.0,
+        "sampled_max_power_w": 328.7
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 4,
+      "repetition": 3,
+      "schedule_ordinal": 13,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c4/rep3",
+      "requests": 200,
+      "receipt_sha256": "f64ab6699ebda7002abe1fcd3b14ed622db60c354206540320a8f8f30c9a3fae",
+      "file_sha256": {
+        "benchmark.json": "19e6bddf7a55031880571b3e0ffb4c3ff9309b7644ec8321654b93a900dba967",
+        "client.log": "779c02ca8b9d65fb6e1ffa9715e96eca00de5372d08581265b5d9deb96275a66",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "5defa53566ac83a1a13239138bacc2f226dd794595f9c106fa289e96abdccce5",
+        "gpu_before.txt": "3a5236a21d500ded5d31dd2268cb0d0ff26852f697e857292c7e7c08fc9ac117",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "173a7557d5788865d09062a0f16f86b456c0a99f9e1739d263825811862a419d",
+        "memory_summary.json": "16eea35852d09cd2c445b24f32bca0ea143ea0a596a10d2bb352e1525bc9103f",
+        "models.json": "0aa3e7b5dbf566572284a3195d479c5bbe2481a78a0273876c5682d485559208",
+        "run_manifest.json": "9d8ec11edb110e1eae60988a2f54c610aa1ccb431bd25ee30862b393a611a859",
+        "server_after.log": "5ca2117a6d848ea9774578b7bdedddd83973d75ea0554d31ff0a1ac673f831a3",
+        "server_before.log": "ac9030b919a21f9e2622cfbe1d05854957ddce91b0236583569bf2554529247d"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 139051,
+      "metrics": {
+        "output_throughput": 333.20713373918204,
+        "mean_ttft_ms": 180.2126009762287,
+        "mean_tpot_ms": 10.676625528790819,
+        "mean_e2el_ms": 1536.1440431326628,
+        "p95_ttft_ms": 232.36593641340733,
+        "p95_tpot_ms": 11.502399533165722,
+        "p95_e2el_ms": 1542.7967011928558
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 98,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 29.0,
+        "sampled_max_temperature_c": 64.0,
+        "sampled_max_power_w": 323.42
+      }
+    },
+    {
+      "method": "ActivationEnergy",
+      "concurrency": 1,
+      "repetition": 3,
+      "schedule_ordinal": 14,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/ActivationEnergy/isl1024_osl128_c1/rep3",
+      "requests": 200,
+      "receipt_sha256": "597cf0d1641e1ada5eba9d065dcff4799c50d1e5c001a64a82100674c685a1d5",
+      "file_sha256": {
+        "benchmark.json": "0b629748f4437afadc6c2eed87ad7a04d52e6a657392016c8639154b569f2e53",
+        "client.log": "866e405d2efbc434c289c14174cec62380c9677b7b4d7375f61c56bf70c1bdb6",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "6241c391af0deb3e1d64bc6b176f15656943aced8216ba581b45b4b6c34f1afd",
+        "gpu_before.txt": "18c4a8690c8b7b0946592ee342b85bea91e9bd10b3dd7888169faf354890eb98",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "5680abf183ee30c026c3d20305f93e5f8c0213f56a5d6a7bceacd34daf2d1574",
+        "memory_summary.json": "ff74d07b66228be069e906916df01fee30b77f41a702775939a27393a3cb508f",
+        "models.json": "6bf4cc2fc465b0a3c2d3d1f84ad5322b0cfd1a53c40e32d0a189205721742ef9",
+        "run_manifest.json": "48339c0d8df38bb87e4d4328d01c6cd47dbf336c5837baaee722eaa6b4ba25cc",
+        "server_after.log": "c047393a878c5a15d4fda480a44cc9c4bd7e63d188a803aa1a8f6cab4bfd7822",
+        "server_before.log": "6209bb97f7db4350a4f9e3a5c3138d359d225b57e5a614b022e2fa7a99c6efe0"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-energy",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+        "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 139051,
+      "metrics": {
+        "output_throughput": 101.78552919318972,
+        "mean_ttft_ms": 76.33536919951439,
+        "mean_tpot_ms": 9.293705655305873,
+        "mean_e2el_ms": 1256.6359874233603,
+        "p95_ttft_ms": 82.99625776708126,
+        "p95_tpot_ms": 9.31141177617659,
+        "p95_e2el_ms": 1262.3711474239826
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 292,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12625.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 38.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 340.39
+      }
+    },
+    {
+      "method": "BF16",
+      "concurrency": 4,
+      "repetition": 3,
+      "schedule_ordinal": 15,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c4/rep3",
+      "requests": 200,
+      "receipt_sha256": "71e344d08497806aaea489950be29cd13ca797c25e0b739051dacacdb7cb4c32",
+      "file_sha256": {
+        "benchmark.json": "15ca419ec77782366c3e656a00c387c9b4975f99df024091ebcadf4bc48cf0be",
+        "client.log": "7a8630396dfe1200d44dcfd701c579088e3a84fb846feadb853b18e14e2389b0",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "21932145d3fd9d600aa94627e287b12272a45813a21779faee0c9b1ffd072470",
+        "gpu_before.txt": "530c9d0f1895f04a4e6158a30f5fe3857a274a0aac3f9cf73bb94991cf269cd8",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "d63c633cfbcc67cbd63fee3cfbea7ed8e94befd5d475ed4ee3f9d43f7eca73a0",
+        "memory_summary.json": "51d5c26f8bf7379eecc401b5e446743c2bbfe08b691d96844d458d3d29912063",
+        "models.json": "da8a3c1d9f818ee1216574777faf19db611d93738cfe01014eb2928709b9b492",
+        "run_manifest.json": "46d2d539f9fb96a483340ea4795681366c45ee0cae550d369152ef656c52140a",
+        "server_after.log": "019eab5dfc050d64e51bb9562c19cf538a064eeeb35c643c9de51ddebb96ebf6",
+        "server_before.log": "999adef0025e3a2f0ea7d036fa33dc5210ffccdde54b32cb0fc1ac5e77bd0f36"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 139757,
+      "metrics": {
+        "output_throughput": 322.72182197772173,
+        "mean_ttft_ms": 184.49036497622728,
+        "mean_tpot_ms": 11.035886853053345,
+        "mean_e2el_ms": 1586.047995314002,
+        "p95_ttft_ms": 237.86458857357502,
+        "p95_tpot_ms": 11.885736477891292,
+        "p95_e2el_ms": 1593.2082060724497
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 101,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12491.0,
+        "sampled_max_used_mib": 12913.0,
+        "sampled_min_temperature_c": 32.0,
+        "sampled_max_temperature_c": 68.0,
+        "sampled_max_power_w": 327.61
+      }
+    },
+    {
+      "method": "BF16",
+      "concurrency": 1,
+      "repetition": 3,
+      "schedule_ordinal": 16,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/BF16/isl1024_osl128_c1/rep3",
+      "requests": 200,
+      "receipt_sha256": "b874199f060533132cd803310f83c46441d579c6019d37a4ec46a5fea71bbd4c",
+      "file_sha256": {
+        "benchmark.json": "9d02baab0c6ac3613804e911c3270117ad5c46072b5fae85badf0ab958751263",
+        "client.log": "9c687f5be0ad1277fcfda5af286a1e64c7fc3637e8a55febda54ef7a92953179",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "f2b647bfd06b80d44a02b1575e476d40185033ffbf957c5832f879377e6b7732",
+        "gpu_before.txt": "8734cdc4d0519db9a67df757ed42f28a5f3e6020eefb3de0228e995327a49fab",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "8f51c41faf4a09a4b706e0315b01baf551b71f50495a3e71d53caed7feb812f5",
+        "memory_summary.json": "0e4f1ba278ee4dc31250c57bd998ebdd9a53a2e061cc241dae341fd3a81fdfe9",
+        "models.json": "87fa8cc4c5898aff74b665c82e4f78d65dff9dfb3160e75fa9b1af47bfe481b4",
+        "run_manifest.json": "b533de1245e2f5bdc7f15a987a3dfe89e7b569b4d583872f9acfbb4b1017c9c5",
+        "server_after.log": "6f0392207da0d576ad2240d47fb67eb608a7f787a3a963e1d4b5d4e9c338cee8",
+        "server_before.log": "0c609ce09328386938164a24773c7a373c82b2c4fa16432d390c8978c46d35bd"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-bf16",
+        "path": "/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 139757,
+      "metrics": {
+        "output_throughput": 98.79692973127095,
+        "mean_ttft_ms": 75.75346305966377,
+        "mean_tpot_ms": 9.598914782010663,
+        "mean_e2el_ms": 1294.8156403750181,
+        "p95_ttft_ms": 79.76786866784094,
+        "p95_tpot_ms": 9.61037728730149,
+        "p95_e2el_ms": 1298.4994105994701
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 298,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12913.0,
+        "sampled_max_used_mib": 12913.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 342.47
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 4,
+      "repetition": 3,
+      "schedule_ordinal": 17,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c4/rep3",
+      "requests": 200,
+      "receipt_sha256": "f4bdded6823f52f0d6f30d364caba2cd7db8974c5376505a79c538e2082b05e5",
+      "file_sha256": {
+        "benchmark.json": "87df27916932d8d645c4eece7fcc6379fc725960fc436b559fa7a188075ebf40",
+        "client.log": "d8e521a6699f02f085f0ff9abd2f303530c55a30c4fb803e2c5c5ab5afecda7c",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "0f0b75769b9fb77ab38ce29dc5a4efba688e3ec2bac747aeb173f33b2e570483",
+        "gpu_before.txt": "1baba5878ac7445843080121a8bbdedd47faec87e4f985c7d55a34ba6368eec6",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "4b22a088dbe38a8057ad6851b5cc121e2bec5a28761514e038ce4672e209c2dd",
+        "memory_summary.json": "c9cc5c9160b273bd0af7095e3b29bb268a3e191e832221c5b9907a7c7647a777",
+        "models.json": "29aa391fc1275fe75caf77c5700cc5a69e32420cd4230b1a9dcb9ec0fb2095e9",
+        "run_manifest.json": "77d56dc548a3f49204ab8f26cbc51d35c369ebddec796072f8dcfbdb4ecd561b",
+        "server_after.log": "c943f4852825425c31bac4b4d563fe7115b90c37396af47533aee8defc5f4c0e",
+        "server_before.log": "25178e4277eecea742a54c05c3ffa041b9282b0a740e25a4087e9bd12781ff9e"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 140850,
+      "metrics": {
+        "output_throughput": 332.9818006713317,
+        "mean_ttft_ms": 180.48996567726135,
+        "mean_tpot_ms": 10.682256314756833,
+        "mean_e2el_ms": 1537.136517651379,
+        "p95_ttft_ms": 230.78659810125828,
+        "p95_tpot_ms": 11.516835839729609,
+        "p95_e2el_ms": 1545.4070765525103
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 98,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12207.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 29.0,
+        "sampled_max_temperature_c": 66.0,
+        "sampled_max_power_w": 323.76
+      }
+    },
+    {
+      "method": "RandomChannels",
+      "concurrency": 1,
+      "repetition": 3,
+      "schedule_ordinal": 18,
+      "path": "/root/autodl-tmp/qwen-pruning-lab/outputs/benchmark/pruning_v1/formal/RandomChannels/isl1024_osl128_c1/rep3",
+      "requests": 200,
+      "receipt_sha256": "1469ce6f3cc41a58d213c3ebeddfde624b40132b53d2ca18910083dc1ce81be8",
+      "file_sha256": {
+        "benchmark.json": "7c7c494b813eb2ce90e26483652d6622f93353dc165c3e2e4c028bedfe44da6d",
+        "client.log": "229adcc2d5f340a032949b7e3fb079b685fb63a1f9f95d2e3f344f6eff0e2145",
+        "environment.txt": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+        "gpu_after.txt": "6fcf08aefe04d33503444666c069baee5a6910fe6f0b7b42b4bb6eb29a5130e9",
+        "gpu_before.txt": "20c4d07a62835ac4ea092c54c211f1cce10bb663202897dffab6e8f06f5b1fbc",
+        "gpu_monitor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gpu_samples.csv": "a0214cb3324e38ad2687e1b0ea20cb157238f444101f07a566f486d75c8bbd74",
+        "memory_summary.json": "5e36d2a71117596b2ae5f994f41891f9675322d56f05c1db45e0750224007516",
+        "models.json": "a97faa83dd63b77b1eaf454b261891e9ee4054457da9129cfb185763175d3b75",
+        "run_manifest.json": "23193397c9d938ab022f54f54a2f3a2951983c404c497e4533e763185b80c20d",
+        "server_after.log": "ee0aab24763d62e3351c4a624b85245649ed745e6f18c5b4b995379606668e0f",
+        "server_before.log": "8ff1bfe0824e38fe33700e232460d39471178d09a5138a5bc7892ea0fa3f87ee"
+      },
+      "checkpoint": {
+        "alias": "qwen-prune-random",
+        "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels",
+        "pruning_manifest_sha256": "2cfa4bb7502ef3d9c7b237d9d6854376fe5d670032c29caa29add322ea0313c4"
+      },
+      "gpu_identity": {
+        "driver": "580.76.05",
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+      },
+      "engine_pid": 140850,
+      "metrics": {
+        "output_throughput": 101.86299927676023,
+        "mean_ttft_ms": 75.95957230776548,
+        "mean_tpot_ms": 9.288888296156417,
+        "mean_e2el_ms": 1255.6483859196305,
+        "p95_ttft_ms": 82.07507394254208,
+        "p95_tpot_ms": 9.305217222669933,
+        "p95_e2el_ms": 1261.1254274845123
+      },
+      "memory": {
+        "sample_interval_seconds": 1,
+        "samples": 289,
+        "scope": "whole GPU during benchmark client, including warmup/probe; excludes server startup",
+        "limitation": "One-second sampling can miss brief memory peaks; not allocator-level model memory.",
+        "sampled_min_used_mib": 12625.0,
+        "sampled_max_used_mib": 12625.0,
+        "sampled_min_temperature_c": 39.0,
+        "sampled_max_temperature_c": 67.0,
+        "sampled_max_power_w": 341.94
+      }
+    }
+  ],
+  "limitations": {
+    "memory_scope": "Whole GPU while benchmark client runs, including warmup and initial probe; excludes startup and can miss brief peaks.",
+    "token_length_scope": "Lengths recorded by the native vLLM benchmark client; no per-request forwarding proxy is inserted.",
+    "repetition_scope": "Repeated benchmark runs, not three independent machine or model-seed samples. A server may stay up between consecutive runs of the same model.",
+    "timing_scope": "Warm local HTTP streaming service; model startup and compilation excluded; client-side timing includes HTTP/client overhead.",
+    "comparison_scope": "One pruning width, one random channel seed, one GPU, two fixed workloads; no general speed guarantee.",
+    "statistical_plan": "For each method/workload report all three run values, arithmetic mean and sample SD. Report ratios of mean throughput and differences of mean sampled maxima. Three repeats are descriptive; do not claim statistical significance."
+  },
+  "new_model_requests": 0,
+  "new_cuda_execution": false
+}

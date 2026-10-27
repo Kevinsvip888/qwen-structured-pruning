@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "created": 1793127124,
+      "id": "qwen-prune-random",
+      "max_model_len": 8192,
+      "object": "model",
+      "owned_by": "vllm",
+      "parent": null,
+      "permission": [
+        {
+          "allow_create_engine": false,
+          "allow_fine_tuning": false,
+          "allow_logprobs": true,
+          "allow_sampling": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "created": 1793127124,
+          "group": null,
+          "id": "modelperm-ad6a1023e58b54cc",
+          "is_blocking": false,
+          "object": "model_permission",
+          "organization": "*"
+        }
+      ],
+      "root": "./models/Qwen3-4B-Instruct-2507-MLP9216-RandomChannels"
+    }
+  ],
+  "object": "list"
+}

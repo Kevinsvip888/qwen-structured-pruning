@@ -1,0 +1,397 @@
+{
+  "calibration_passes_file": "outputs/importance_v1/20261027T161051962109Z/calibration_passes.json",
+  "collector_script_sha256": "2a7d2dc182c0af1322413fd133a68a2aad67010cc75f4dc81ba3f106ad4adaec",
+  "environment_sha256": "d8242ac285faa08b7b2a17ad211d644bd6e5a006c4a6e19401f2a1b195460199",
+  "file_sha256": {
+    "outputs/importance_v1/20261027T161051962109Z/calibration_passes.json": "50fe1473b0046ccf67bfcc79f4afc86c1e232cb72cf07d7fc47f73838ff72caa",
+    "outputs/importance_v1/20261027T161051962109Z/channel_selections.json": "00a0fea6b0b66becf77dc36232c81e8ff98bb0e964bcc8bbce2fa0db250448cc",
+    "outputs/importance_v1/20261027T161051962109Z/channel_statistics.safetensors": "c2479ad29b4cb167968b0db18afc3e1c24a1a50a29761fe72c442e9f295214ba"
+  },
+  "gpu_identity": {
+    "driver": "580.76.05",
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+  },
+  "hook_probe_output_exact": true,
+  "layer_call_counts": [
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128,
+    128
+  ],
+  "layer_diagnostics": [
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9935048691789289,
+      "RandomChannels_retained_score_fraction": 0.9424586247954133,
+      "layer": 0,
+      "score_max": 0.16538524086766096,
+      "score_min": 9.110893055010241e-05,
+      "score_sum": 15.622812781779
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9999999993253793,
+      "RandomChannels_retained_score_fraction": 0.9852725840124056,
+      "layer": 1,
+      "score_max": 17.62929829858458,
+      "score_min": 2.5448261725433378e-12,
+      "score_sum": 28.12070081245207
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9999999994038427,
+      "RandomChannels_retained_score_fraction": 0.9592405330686037,
+      "layer": 2,
+      "score_max": 0.17457994484429293,
+      "score_min": 4.9688550349756657e-14,
+      "score_sum": 11.221282650398203
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9999999981047619,
+      "RandomChannels_retained_score_fraction": 0.9513022082402136,
+      "layer": 3,
+      "score_max": 0.28433502002371663,
+      "score_min": 1.8809299995500552e-11,
+      "score_sum": 27.902106397675457
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9982041203445757,
+      "RandomChannels_retained_score_fraction": 0.9506503783103684,
+      "layer": 4,
+      "score_max": 0.512371296018375,
+      "score_min": 6.755177762366958e-06,
+      "score_sum": 48.90335441979466
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9929094083609675,
+      "RandomChannels_retained_score_fraction": 0.9434408372496224,
+      "layer": 5,
+      "score_max": 2.007153461276434,
+      "score_min": 0.0001531563559225705,
+      "score_sum": 87.77781376366546
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9999135085647786,
+      "RandomChannels_retained_score_fraction": 0.2292953741797154,
+      "layer": 6,
+      "score_max": 20062.779014297303,
+      "score_min": 0.0011766920919868491,
+      "score_sum": 26040.686511730837
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9812391585994934,
+      "RandomChannels_retained_score_fraction": 0.9433283602178094,
+      "layer": 7,
+      "score_max": 0.2908641369150848,
+      "score_min": 0.0016379603159197282,
+      "score_sum": 140.48120348918752
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9784065082844352,
+      "RandomChannels_retained_score_fraction": 0.9445079686462339,
+      "layer": 8,
+      "score_max": 0.8289128094061466,
+      "score_min": 0.0028756650036182475,
+      "score_sum": 197.6023373445372
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9798342561610763,
+      "RandomChannels_retained_score_fraction": 0.9421332447446832,
+      "layer": 9,
+      "score_max": 1.5580350180846394,
+      "score_min": 0.002746165080824291,
+      "score_sum": 216.0622066487972
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9799639428412803,
+      "RandomChannels_retained_score_fraction": 0.9460774067649227,
+      "layer": 10,
+      "score_max": 3.078658363175238,
+      "score_min": 0.003744394450260584,
+      "score_sum": 207.25487225281023
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9791340966862877,
+      "RandomChannels_retained_score_fraction": 0.9475756947425233,
+      "layer": 11,
+      "score_max": 1.7465933503715803,
+      "score_min": 0.003636149930977771,
+      "score_sum": 198.5605920086901
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.979527459540133,
+      "RandomChannels_retained_score_fraction": 0.9516264401081993,
+      "layer": 12,
+      "score_max": 4.370430755229527,
+      "score_min": 0.0035566930282251693,
+      "score_sum": 197.578492739903
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9792876659878172,
+      "RandomChannels_retained_score_fraction": 0.9486063431463527,
+      "layer": 13,
+      "score_max": 1.115279425607845,
+      "score_min": 0.004673606191275298,
+      "score_sum": 206.96052230027075
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9795325099226466,
+      "RandomChannels_retained_score_fraction": 0.9343814585762198,
+      "layer": 14,
+      "score_max": 3.963861757916782,
+      "score_min": 0.003061707041740773,
+      "score_sum": 189.0773515850099
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9793473332495135,
+      "RandomChannels_retained_score_fraction": 0.9497168349574988,
+      "layer": 15,
+      "score_max": 3.0136996298494623,
+      "score_min": 0.002209923709489469,
+      "score_sum": 176.35793515693538
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9998509407528215,
+      "RandomChannels_retained_score_fraction": 0.9995777625607184,
+      "layer": 16,
+      "score_max": 22231.938058649022,
+      "score_min": 0.0017811513081237877,
+      "score_sum": 22625.058488348383
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9811478306459182,
+      "RandomChannels_retained_score_fraction": 0.943586610628317,
+      "layer": 17,
+      "score_max": 0.6623744365611165,
+      "score_min": 0.002216380160379296,
+      "score_sum": 178.20958279656998
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9826832571038626,
+      "RandomChannels_retained_score_fraction": 0.9531931088778607,
+      "layer": 18,
+      "score_max": 9.408805610063624,
+      "score_min": 0.002337561678222769,
+      "score_sum": 221.23138980239264
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9837122337520837,
+      "RandomChannels_retained_score_fraction": 0.947783794290313,
+      "layer": 19,
+      "score_max": 1.6891488761093632,
+      "score_min": 0.0015792326381587518,
+      "score_sum": 276.6788858153628
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9824643765551173,
+      "RandomChannels_retained_score_fraction": 0.9452839748802285,
+      "layer": 20,
+      "score_max": 1.3766897422458737,
+      "score_min": 0.003941575363187692,
+      "score_sum": 314.5813853738642
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9836416313154958,
+      "RandomChannels_retained_score_fraction": 0.9443618444027025,
+      "layer": 21,
+      "score_max": 1.45909733258779,
+      "score_min": 0.005984849554140707,
+      "score_sum": 400.6203353945663
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9875335935484848,
+      "RandomChannels_retained_score_fraction": 0.9476599729087687,
+      "layer": 22,
+      "score_max": 1.7260344981435614,
+      "score_min": 0.006443691252689819,
+      "score_sum": 634.2344189175105
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9870051798484901,
+      "RandomChannels_retained_score_fraction": 0.94914367128652,
+      "layer": 23,
+      "score_max": 4.48661712186251,
+      "score_min": 0.008112107575799058,
+      "score_sum": 857.1880373856803
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9876138850161915,
+      "RandomChannels_retained_score_fraction": 0.9505113817477476,
+      "layer": 24,
+      "score_max": 5.287366524245233,
+      "score_min": 0.010430849691575842,
+      "score_sum": 1107.25376896322
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9870090138944598,
+      "RandomChannels_retained_score_fraction": 0.9383297722493761,
+      "layer": 25,
+      "score_max": 5.833221528144698,
+      "score_min": 0.013587729772153365,
+      "score_sum": 1265.915772334209
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9864083612305954,
+      "RandomChannels_retained_score_fraction": 0.9524395708397305,
+      "layer": 26,
+      "score_max": 7.722848577073588,
+      "score_min": 0.01733814358152872,
+      "score_sum": 1427.456348795298
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9877877214308055,
+      "RandomChannels_retained_score_fraction": 0.9427063778356259,
+      "layer": 27,
+      "score_max": 9.972533576962233,
+      "score_min": 0.015465089010188046,
+      "score_sum": 1877.6020678616728
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9894410629242257,
+      "RandomChannels_retained_score_fraction": 0.9474477084122289,
+      "layer": 28,
+      "score_max": 8.674380688190004,
+      "score_min": 0.03023434048158432,
+      "score_sum": 2606.658670875021
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9896508751476175,
+      "RandomChannels_retained_score_fraction": 0.9482657799682729,
+      "layer": 29,
+      "score_max": 24.485110168075057,
+      "score_min": 0.031900152604974856,
+      "score_sum": 3228.784572615804
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9902582580953071,
+      "RandomChannels_retained_score_fraction": 0.9486686292269517,
+      "layer": 30,
+      "score_max": 32.92165054153065,
+      "score_min": 0.04600174324175468,
+      "score_sum": 4398.764040712545
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9905456557725401,
+      "RandomChannels_retained_score_fraction": 0.9533013664125438,
+      "layer": 31,
+      "score_max": 230.7932276405565,
+      "score_min": 0.03217704722018702,
+      "score_sum": 5864.225226461018
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9913105946031344,
+      "RandomChannels_retained_score_fraction": 0.9386418803299837,
+      "layer": 32,
+      "score_max": 81.0525756853345,
+      "score_min": 0.02761304696461181,
+      "score_sum": 7756.938604105789
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.9929879216662482,
+      "RandomChannels_retained_score_fraction": 0.9508933269794153,
+      "layer": 33,
+      "score_max": 395.07969178812584,
+      "score_min": 0.0166134735515557,
+      "score_sum": 11280.6149546993
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.995869590433748,
+      "RandomChannels_retained_score_fraction": 0.9569768650499259,
+      "layer": 34,
+      "score_max": 1524.8560956110655,
+      "score_min": 0.018115681430068864,
+      "score_sum": 17599.519323826345
+    },
+    {
+      "ActivationEnergy_retained_score_fraction": 0.999225241021995,
+      "RandomChannels_retained_score_fraction": 0.9658823443920265,
+      "layer": 35,
+      "score_max": 3628.6273096057957,
+      "score_min": 0.005526061062491274,
+      "score_sum": 40115.46441161763
+    }
+  ],
+  "layer_token_counts": [
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536,
+    65536
+  ],
+  "modeling_source_path": "/root/autodl-tmp/qwen-inference-lab/.venv-serve/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py",
+  "modeling_source_sha256": "ca9535e36ea4e689c76d7d753b91aec9ea00da837fbf223c8ea4c01a3b50cac0",
+  "packages": {
+    "safetensors": "0.8.0",
+    "torch": "2.13.0+cu132",
+    "transformers": "5.19.0"
+  },
+  "parameter_metadata_preserved": true,
+  "protocol_sha256": "f4482e32ad3e8b9564659856610fd9129607d194dc832d5faf48460b92d55592",
+  "proxy_note": "Retained score mass ignores correlations between channels and is not a guarantee of quality or output reconstruction.",
+  "scope": "Original-model activation statistics and frozen channel selections. No surgery, export, gradient updates, quality evaluation or speed measurements.",
+  "selection_file": "outputs/importance_v1/20261027T161051962109Z/channel_selections.json",
+  "source_files_unchanged": true,
+  "statistics_file": "outputs/importance_v1/20261027T161051962109Z/channel_statistics.safetensors",
+  "study": "original_bf16_channel_importance_v1"
+}

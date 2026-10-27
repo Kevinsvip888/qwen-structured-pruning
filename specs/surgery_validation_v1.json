@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "purpose": "Validate channel surgery, not preserved unpruned-model accuracy",
+  "operation": "Slice matching gate/up rows and down-projection columns into a smaller dense SiLU MLP",
+  "source_weights": "Original BF16 weights; converted losslessly to FP64 for the algebra check",
+  "reference": "Original-width FP64 SiLU MLP with discarded intermediate channels set to zero before down projection",
+  "fp64_tolerances": {"rtol": 1e-10, "atol": 1e-10},
+  "weight_slices": "Exact equality to source index_select; separate storage; preserve source values and configuration",
+  "native_bf16_check": "Finite output, correct output dtype/shape, input preservation and exact weight slices; no assertion of bit-identical output across different GEMM dimensions",
+  "real_layers": 36,
+  "methods": ["RandomChannels", "ActivationEnergy"],
+  "input_shapes_per_real_layer": [[1, 2560], [1, 4, 2560]],
+  "real_input_seed": 20261027,
+  "scope": "Layer-level arithmetic and copy integrity. Does not evaluate full-model quality, speed, checkpoint reload or serving."
+}

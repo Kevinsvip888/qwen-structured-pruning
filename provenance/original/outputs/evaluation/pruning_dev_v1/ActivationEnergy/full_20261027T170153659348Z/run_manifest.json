@@ -1,0 +1,48 @@
+{
+  "study": "pruning_dev_v1",
+  "scope": "full",
+  "method": "ActivationEnergy",
+  "question_counts": {
+    "day7_gsm8k_dev": 256,
+    "day7_arc_challenge_dev": 299
+  },
+  "expected_http_requests": 1450,
+  "protocol_sha256": "9ec3eb2d74fd9461d3de850a12fca8ac12b6e4eb15ecd48e72ea35b20d41b352",
+  "command": [
+    "/root/autodl-tmp/qwen-inference-lab/.venv-eval/bin/python",
+    "-m",
+    "lm_eval",
+    "run",
+    "--model",
+    "local-completions",
+    "--model_args",
+    "model=qwen-prune-energy,base_url=http://127.0.0.1:35727/v1/completions,tokenizer=/root/autodl-tmp/qwen-inference-lab/models/Qwen3-4B-Instruct-2507,tokenizer_backend=huggingface,tokenized_requests=True,add_bos_token=False,max_length=8192,max_gen_toks=2048,num_concurrent=1,max_retries=1,timeout=300,seed=42",
+    "--tasks",
+    "day7_gsm8k_dev,day7_arc_challenge_dev",
+    "--include_path",
+    "/root/autodl-tmp/qwen-pruning-lab/data/evaluation/pruning_dev_v1/tasks",
+    "--batch_size",
+    "1",
+    "--seed",
+    "42,42,42,42",
+    "--log_samples",
+    "--output_path",
+    "/root/autodl-tmp/qwen-pruning-lab/outputs/evaluation/pruning_dev_v1/ActivationEnergy/full_20261027T170153659348Z/harness"
+  ],
+  "checkpoint": {
+    "alias": "qwen-prune-energy",
+    "path": "/root/autodl-tmp/qwen-pruning-lab/models/Qwen3-4B-Instruct-2507-MLP9216-ActivationEnergy",
+    "pruning_manifest_sha256": "b674d965770d712565e4cb8a50b5136525f9ebadcfe1e241e2215718fe9cfaa1"
+  },
+  "gpu_identity": {
+    "driver": "580.76.05",
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-8e98a7a3-27fc-5dc2-9294-3033328821ad"
+  },
+  "runner_files_sha256": {
+    "scripts/prepare_pruning_quality.py": "ab6d6c2fa64bf1e80e9e83f6767b7c40f1344569ea2a651cf24aa2599de3e1b1",
+    "scripts/run_pruning_quality.py": "1e66852480fadc6f134ba3a2620e853cd1b1e64de6a19330d5605761672e226c",
+    "scripts/pruning_eval_recording.py": "3e51498f3229b014a66a9a02a76ebcd165c69c4bcecea6e4f34eb9d51c4e751a"
+  },
+  "timing_scope": "Recorder/client overhead included; not serving performance measurements"
+}
